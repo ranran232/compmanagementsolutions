@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Comprehensive Management Solutions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy-950: #0c1c31;
+    --navy-900: #10233c;
+    --navy-800: #16304f;
+    --navy-700: #24456e;
+    --slate-500: #52708f;
+    --brass-600: #a8792f;
+    --brass-500: #c08a2e;
+    --brass-400: #d6a44a;
+    --paper-50: #faf7f0;
+    --paper-100: #f4efe3;
+    --paper-200: #ece4d2;
+    --ink-900: #191710;
+    --ink-700: #3d3a30;
+    --ink-500: #6b665a;
+    --line: #ddd3ba;
+
+    --bg: var(--paper-50);
+    --bg-raised: #ffffff;
+    --bg-sunken: var(--paper-100);
+    --text: var(--ink-900);
+    --text-muted: var(--ink-500);
+    --border: var(--line);
+    --accent: var(--brass-600);
+    --accent-ink: #ffffff;
+    --navy: var(--navy-900);
+    --navy-ink: #eef2f6;
+    --shadow: 0 1px 2px rgba(25,23,16,0.06), 0 8px 24px -12px rgba(25,23,16,0.18);
+    --logo-icon: url("data:image/png;base64,PLACEHOLDER_LOGO");
+    --hero-photo: url("data:image/jpeg;base64,PLACEHOLDER_HERO");
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1420;
+      --bg-raised: #141c2b;
+      --bg-sunken: #0a0f18;
+      --text: #eee9dc;
+      --text-muted: #9aa3b4;
+      --border: #263349;
+      --accent: var(--brass-400);
+      --accent-ink: #191710;
+      --navy: #0a1424;
+      --navy-ink: #eef2f6;
+      --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 28px -14px rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1420;
+    --bg-raised: #141c2b;
+    --bg-sunken: #0a0f18;
+    --text: #eee9dc;
+    --text-muted: #9aa3b4;
+    --border: #263349;
+    --accent: var(--brass-400);
+    --accent-ink: #191710;
+    --navy: #0a1424;
+    --navy-ink: #eef2f6;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 28px -14px rgba(0,0,0,0.6);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, "Times New Roman", serif; text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; letter-spacing: 0.01em; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  @media (max-width: 640px) { .wrap { padding: 0 20px; } }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ---------- NAV (transparent over hero, pill on scroll) ---------- */
+  header.site {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    padding: 20px 20px 0;
+    transition: padding 0.35s ease;
+  }
+  header.site.scrolled { padding-top: 14px; }
+
+  .nav-shell {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 26px;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
+    transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+  }
+  header.site.scrolled .nav-shell {
+    background: color-mix(in srgb, var(--navy) 94%, transparent);
+    border-color: color-mix(in srgb, var(--navy-ink) 14%, transparent);
+    box-shadow: 0 16px 32px -16px rgba(0,0,0,0.55);
+    backdrop-filter: blur(12px);
+    padding: 10px 24px;
+  }
+
+  header.site .brand { display: flex; align-items: center; gap: 10px; }
+  header.site .brand-mark {
+    height: 38px; width: 44px;
+    background: var(--logo-icon) center / contain no-repeat;
+    flex-shrink: 0;
+  }
+  header.site .brand-text { line-height: 1.1; }
+  header.site .brand-text .b1 { font-family: "Fraunces", serif; font-weight: 600; font-size: 0.98rem; color: var(--navy-ink); }
+  header.site .brand-text .b2 { font-size: 0.66rem; color: color-mix(in srgb, var(--navy-ink) 65%, transparent); letter-spacing: 0.06em; text-transform: uppercase; }
+
+  header.site nav.links { display: flex; align-items: center; gap: 28px; }
+  header.site nav.links a.navlink {
+    font-size: 0.9rem; font-weight: 500; color: var(--navy-ink);
+    position: relative; padding: 4px 0;
+  }
+  header.site nav.links a.navlink::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px;
+    background: var(--brass-400); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+  header.site nav.links a.navlink:hover::after { transform: scaleX(1); }
+
+  header.site .nav-phone { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 600; color: var(--navy-ink); }
+  header.site .nav-phone svg { width: 15px; height: 15px; stroke: var(--brass-400); }
+
+  header.site .btn-ghost {
+    background: transparent;
+    border: 1px solid color-mix(in srgb, var(--navy-ink) 26%, transparent);
+    color: var(--navy-ink);
+  }
+  header.site .btn-ghost:hover { background: color-mix(in srgb, var(--navy-ink) 12%, transparent); }
+
+  header.site .burger { border-color: color-mix(in srgb, var(--navy-ink) 26%, transparent); }
+  header.site .burger svg { stroke: var(--navy-ink); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 20px; border-radius: 999px;
+    font-size: 0.9rem; font-weight: 600;
+    border: 1px solid transparent; cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--brass-500); color: #1a1206; box-shadow: 0 8px 20px -8px rgba(192,138,46,0.6); }
+  .btn-primary:hover { background: var(--brass-400); }
+  .btn-ghost { background: transparent; border-color: var(--border); color: var(--text); }
+  .btn-ghost:hover { background: var(--bg-sunken); }
+  .btn-navy { background: var(--navy); color: var(--navy-ink); }
+  .btn-navy:hover { background: var(--navy-700); }
+
+  .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+  .burger { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; width: 38px; height: 38px; align-items: center; justify-content: center; cursor: pointer; }
+  .burger svg { width: 19px; height: 19px; stroke: var(--text); }
+
+  .mobile-menu {
+    display: none; flex-direction: column; gap: 2px;
+    max-width: 1180px; margin: 8px auto 0;
+    padding: 14px 22px 18px;
+    border-radius: 20px;
+    background: color-mix(in srgb, var(--navy) 96%, transparent);
+    border: 1px solid color-mix(in srgb, var(--navy-ink) 14%, transparent);
+    box-shadow: 0 16px 32px -16px rgba(0,0,0,0.55);
+    backdrop-filter: blur(12px);
+  }
+  .mobile-menu a.navlink { padding: 12px 2px; font-weight: 500; color: var(--navy-ink); border-bottom: 1px solid color-mix(in srgb, var(--navy-ink) 12%, transparent); }
+  .mobile-menu .btn { margin-top: 12px; justify-content: center; }
+  .mobile-menu .btn-ghost { border-color: color-mix(in srgb, var(--navy-ink) 26%, transparent); color: var(--navy-ink); }
+  .mobile-menu.open { display: flex; }
+
+  @media (max-width: 860px) {
+    header.site nav.links, header.site .nav-actions .btn-ghost, header.site .nav-phone { display: none; }
+    .burger { display: inline-flex; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    color: var(--navy-ink);
+    overflow: hidden;
+  }
+  .hero-photo {
+    position: absolute; inset: 0;
+    background-image: var(--hero-photo);
+    background-size: cover;
+    background-position: center 62%;
+  }
+  .hero-photo::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(12,28,49,0.82) 0%, rgba(12,28,49,0.58) 38%, rgba(16,35,60,0.72) 78%, rgba(22,48,79,0.92) 100%),
+      linear-gradient(90deg, rgba(12,28,49,0.55) 0%, rgba(12,28,49,0.1) 45%, rgba(12,28,49,0.05) 100%);
+  }
+  .hero-inner {
+    position: relative; z-index: 2;
+    padding: 132px 0 76px;
+    min-height: 640px;
+    display: flex; align-items: flex-end;
+  }
+  @media (max-width: 900px) {
+    .hero-inner { padding-top: 112px; padding-bottom: 56px; min-height: 560px; }
+  }
+  .hero-copy { max-width: 640px; }
+  .badge-row {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: color-mix(in srgb, var(--navy-ink) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--navy-ink) 18%, transparent);
+    border-radius: 999px; padding: 7px 14px; margin-bottom: 22px;
+  }
+  .badge-row .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--brass-400); }
+  .badge-row span { font-size: 0.78rem; letter-spacing: 0.03em; color: color-mix(in srgb, var(--navy-ink) 88%, transparent); }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 5.4vw, 4rem);
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    max-width: 13ch;
+  }
+  .hero h1 em { font-style: normal; color: var(--brass-400); }
+  .hero-sub {
+    margin-top: 22px; font-size: 1.1rem; line-height: 1.6;
+    color: color-mix(in srgb, var(--navy-ink) 78%, transparent);
+    max-width: 46ch;
+  }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid color-mix(in srgb, var(--navy-ink) 16%, transparent);
+    margin-top: 44px;
+  }
+  .hero-stats .stat { padding: 18px 20px 0 0; }
+  .hero-stats .stat:not(:first-child) { border-left: 1px solid color-mix(in srgb, var(--navy-ink) 16%, transparent); padding-left: 20px; }
+  .hero-stats .num { font-family: "Fraunces", serif; font-size: 1.7rem; font-weight: 600; color: var(--brass-400); }
+  .hero-stats .label { font-size: 0.78rem; color: color-mix(in srgb, var(--navy-ink) 70%, transparent); margin-top: 3px; }
+
+  /* ---------- SECTION HEADERS ---------- */
+  section { padding: 96px 0; }
+  @media (max-width: 720px) { section { padding: 64px 0; } }
+  .section-head { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: end; margin-bottom: 52px; }
+  @media (max-width: 800px) { .section-head { grid-template-columns: 1fr; gap: 16px; } }
+  .section-head .eyebrow { color: var(--accent); margin-bottom: 12px; display: block; }
+  .section-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 600; line-height: 1.12; }
+  .section-head .desc { color: var(--text-muted); font-size: 1.02rem; line-height: 1.6; }
+
+  /* ---------- SERVICES (checklist band) ---------- */
+  .services-band { background: var(--bg-sunken); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .check-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  @media (max-width: 720px) { .check-grid { grid-template-columns: 1fr; } }
+  .check-item {
+    background: var(--bg-raised);
+    padding: 26px 26px;
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .check-num { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; color: var(--text-muted); padding-top: 3px; min-width: 26px; }
+  .check-ico {
+    width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0;
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .check-ico svg { width: 17px; height: 17px; stroke: var(--accent); }
+  .check-item h3 { font-family: "Inter", sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+  .check-item p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.5; }
+
+  /* ---------- ADDITIONAL SERVICES (navy strip list) ---------- */
+  .addl {
+    background: var(--navy);
+    color: var(--navy-ink);
+  }
+  .addl .section-head .eyebrow { color: var(--brass-400); }
+  .addl .section-head .desc { color: color-mix(in srgb, var(--navy-ink) 72%, transparent); }
+  .addl-list { display: flex; flex-direction: column; }
+  .addl-row {
+    display: grid; grid-template-columns: 60px 1fr;
+    padding: 22px 0;
+    border-top: 1px solid color-mix(in srgb, var(--navy-ink) 14%, transparent);
+    align-items: center;
+    gap: 18px;
+  }
+  .addl-list .addl-row:last-child { border-bottom: 1px solid color-mix(in srgb, var(--navy-ink) 14%, transparent); }
+  .addl-row .n { font-family: "IBM Plex Mono", monospace; color: var(--brass-400); font-size: 0.95rem; }
+  .addl-row .t { font-size: 1.06rem; font-weight: 500; }
+  @media (max-width: 640px) { .addl-row { grid-template-columns: 36px 1fr; } .addl-row .t { font-size: 0.98rem; } }
+
+  /* ---------- ABOUT ---------- */
+  .about-wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
+  @media (max-width: 860px) { .about-wrap { grid-template-columns: 1fr; gap: 36px; } }
+  .about-card {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+  }
+  .about-card .quote-mark { font-family: "Fraunces", serif; font-size: 3rem; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+  .about-card p { font-size: 1.06rem; line-height: 1.7; color: var(--text); }
+  .about-card .sig { margin-top: 20px; font-size: 0.85rem; color: var(--text-muted); }
+
+  .about-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-top: 28px; }
+  @media (max-width: 520px) { .about-facts { grid-template-columns: 1fr 1fr; } }
+  .fact { background: var(--bg-raised); padding: 20px 16px; }
+  .fact .num { font-family: "Fraunces", serif; font-size: 1.7rem; font-weight: 600; color: var(--accent); }
+  .fact .label { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; line-height: 1.4; }
+
+  .about-detail h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 14px; }
+  .about-detail p { color: var(--text-muted); line-height: 1.7; font-size: 1rem; margin-bottom: 16px; }
+  .creds { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .cred-pill {
+    display: inline-flex; align-items: center; gap: 7px;
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 8px 14px; font-size: 0.83rem; font-weight: 600;
+    background: var(--bg-sunken);
+  }
+  .cred-pill svg { width: 14px; height: 14px; stroke: var(--accent); }
+
+  /* ---------- PROCESS ---------- */
+  .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 800px) { .process-grid { grid-template-columns: 1fr; } }
+  .process-step {
+    border: 1px solid var(--border); border-radius: 16px; padding: 28px 24px;
+    background: var(--bg-raised);
+    position: relative;
+  }
+  .process-step .pnum {
+    font-family: "Fraunces", serif; font-size: 2.4rem; font-weight: 600;
+    color: color-mix(in srgb, var(--accent) 30%, transparent);
+    margin-bottom: 12px;
+  }
+  .process-step h3 { font-size: 1.08rem; font-weight: 700; font-family: "Inter", sans-serif; margin-bottom: 8px; }
+  .process-step p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+
+  /* ---------- CTA / CONTACT ---------- */
+  .cta-band {
+    background: linear-gradient(135deg, var(--navy-950), var(--navy-800));
+    color: var(--navy-ink);
+    border-radius: 24px;
+    padding: 52px 44px;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  @media (max-width: 800px) { .cta-band { grid-template-columns: 1fr; padding: 38px 26px; } }
+  .cta-band h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; margin-bottom: 12px; }
+  .cta-band p { color: color-mix(in srgb, var(--navy-ink) 78%, transparent); font-size: 1rem; line-height: 1.6; max-width: 42ch; }
+  .cta-band .hero-ctas { margin-top: 24px; }
+  .cta-contact { display: flex; flex-direction: column; gap: 16px; }
+  .cta-line { display: flex; align-items: flex-start; gap: 12px; }
+  .cta-line svg { width: 18px; height: 18px; stroke: var(--brass-400); flex-shrink: 0; margin-top: 2px; }
+  .cta-line .l1 { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--navy-ink) 60%, transparent); margin-bottom: 2px; }
+  .cta-line .l2 { font-size: 1rem; font-weight: 600; }
+
+  /* ---------- CONTACT FORM ---------- */
+  .form-band {
+    background: linear-gradient(180deg, var(--navy-950), var(--navy-800));
+    border-radius: 24px;
+    padding: 56px 48px 48px;
+    margin-top: 28px;
+    color: var(--navy-ink);
+  }
+  @media (max-width: 640px) { .form-band { padding: 40px 22px 34px; } }
+  .form-head { text-align: center; margin-bottom: 40px; }
+  .form-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 600; color: var(--brass-400); }
+  .form-head p { margin-top: 10px; color: color-mix(in srgb, var(--navy-ink) 74%, transparent); font-size: 0.98rem; }
+
+  .contact-form { max-width: 620px; margin: 0 auto; display: flex; flex-direction: column; gap: 26px; }
+  .f-group label {
+    display: block; font-weight: 700; font-size: 0.95rem;
+    color: var(--brass-400); margin-bottom: 10px;
+  }
+  .f-group label .req { color: #e0645a; margin-left: 3px; }
+  .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 520px) { .f-row { grid-template-columns: 1fr; } }
+  .f-field { display: flex; flex-direction: column; gap: 6px; }
+  .f-field .f-sub { font-size: 0.76rem; color: color-mix(in srgb, var(--navy-ink) 55%, transparent); }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    background: #ffffff;
+    color: var(--ink-900);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .contact-form textarea { resize: vertical; min-height: 140px; }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--brass-400);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brass-400) 35%, transparent);
+  }
+  .contact-form input:invalid:not(:placeholder-shown),
+  .contact-form textarea:invalid:not(:placeholder-shown) { box-shadow: 0 0 0 2px #e0645a; }
+
+  /* self-styled bot check (not affiliated with any third-party verification service) */
+  .bot-check {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    background: #ffffff; border-radius: 8px;
+    padding: 16px 18px;
+    max-width: 320px;
+  }
+  .bot-check .bc-left { display: flex; align-items: center; gap: 14px; }
+  .bot-check .bc-box {
+    width: 26px; height: 26px; border-radius: 4px;
+    border: 2px solid #8a8a8a;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; flex-shrink: 0; background: #fff;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .bot-check .bc-box svg { width: 16px; height: 16px; opacity: 0; transform: scale(0.5); transition: opacity 0.15s ease, transform 0.15s ease; stroke: #fff; }
+  .bot-check.checked .bc-box { background: var(--brass-600); border-color: var(--brass-600); }
+  .bot-check.checked .bc-box svg { opacity: 1; transform: scale(1); }
+  .bot-check .bc-spin {
+    width: 26px; height: 26px; border-radius: 50%;
+    border: 3px solid #d9d9d9; border-top-color: var(--brass-600);
+    display: none; flex-shrink: 0;
+    animation: bcspin 0.7s linear infinite;
+  }
+  .bot-check.checking .bc-box { display: none; }
+  .bot-check.checking .bc-spin { display: block; }
+  @keyframes bcspin { to { transform: rotate(360deg); } }
+  .bot-check .bc-label { font-size: 0.92rem; color: var(--ink-900); font-weight: 500; }
+  .bot-check .bc-badge {
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    font-size: 0.56rem; color: var(--ink-500); letter-spacing: 0.02em; text-align: center;
+  }
+  .bot-check .bc-badge svg { width: 20px; height: 20px; stroke: var(--slate-500); }
+
+  .contact-form .submit-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .btn-submit {
+    background: var(--brass-500); color: #1a1206;
+    border: none; border-radius: 8px;
+    padding: 14px 34px;
+    font-size: 0.92rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+  }
+  .btn-submit:hover:not(:disabled) { background: var(--brass-400); transform: translateY(-1px); }
+  .btn-submit:disabled { opacity: 0.45; cursor: not-allowed; }
+  .form-note { font-size: 0.82rem; color: color-mix(in srgb, var(--navy-ink) 65%, transparent); }
+  .form-note.error { color: #f0a49c; }
+  .form-note.success { color: #9fd6a8; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0 32px;
+  }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .footer-inner .fbrand { display: flex; align-items: center; gap: 10px; }
+  .footer-inner .fbrand .brand-mark {
+    width: 42px; height: 42px; border-radius: 9px; background: var(--navy);
+    flex-shrink: 0;
+  }
+  .footer-inner .fbrand .brand-mark .icon {
+    width: 100%; height: 100%;
+    background: var(--logo-icon) center / 70% no-repeat;
+  }
+  .footer-inner .fbrand .brand-text .b1 { font-family: "Fraunces", serif; font-weight: 600; font-size: 1rem; color: var(--text); }
+  .footer-inner .fbrand .brand-text .b2 { font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+  .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.86rem; color: var(--text-muted); }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy { font-size: 0.78rem; color: var(--text-muted); margin-top: 18px; }
+
+  /* ---------------------------------------------------------------
+     REVEAL ANIMATION — FIXED
+     Content is visible by default (opacity:1 / no transform).
+     Only when JavaScript successfully runs do we add the "js" class
+     to <html>; only then do reveal elements start hidden and animate
+     in on scroll. This means the page never depends on JS to be
+     readable — if a script is blocked, delayed, or stripped by a
+     screenshot/preview tool, everything still renders normally.
+  ----------------------------------------------------------------*/
+  .reveal, .reveal-up {
+    opacity: 1;
+    transform: none;
+  }
+  html.js .reveal,
+  html.js .reveal-up {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.65s cubic-bezier(.2,.7,.3,1), transform 0.65s cubic-bezier(.2,.7,.3,1);
+  }
+  html.js .reveal-up { transform: translateY(24px); }
+  html.js .reveal.in,
+  html.js .reveal-up.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* stagger children by DOM order within a revealed group */
+  .check-item.reveal:nth-child(1) { transition-delay: 0s; }
+  .check-item.reveal:nth-child(2) { transition-delay: 0.05s; }
+  .check-item.reveal:nth-child(3) { transition-delay: 0.1s; }
+  .check-item.reveal:nth-child(4) { transition-delay: 0.15s; }
+  .check-item.reveal:nth-child(5) { transition-delay: 0.2s; }
+  .check-item.reveal:nth-child(6) { transition-delay: 0.25s; }
+  .check-item.reveal:nth-child(7) { transition-delay: 0.3s; }
+  .check-item.reveal:nth-child(8) { transition-delay: 0.35s; }
+  .addl-row.reveal:nth-child(1) { transition-delay: 0s; }
+  .addl-row.reveal:nth-child(2) { transition-delay: 0.06s; }
+  .addl-row.reveal:nth-child(3) { transition-delay: 0.12s; }
+  .addl-row.reveal:nth-child(4) { transition-delay: 0.18s; }
+  .addl-row.reveal:nth-child(5) { transition-delay: 0.24s; }
+  .process-step.reveal:nth-child(1) { transition-delay: 0s; }
+  .process-step.reveal:nth-child(2) { transition-delay: 0.1s; }
+  .process-step.reveal:nth-child(3) { transition-delay: 0.2s; }
+  .fact.reveal:nth-child(1) { transition-delay: 0s; }
+  .fact.reveal:nth-child(2) { transition-delay: 0.08s; }
+  .fact.reveal:nth-child(3) { transition-delay: 0.16s; }
+  .stat.reveal:nth-child(1) { transition-delay: 0s; }
+  .stat.reveal:nth-child(2) { transition-delay: 0.1s; }
+  .stat.reveal:nth-child(3) { transition-delay: 0.2s; }
+  @media (prefers-reduced-motion: reduce) {
+    html.js .reveal, html.js .reveal-up { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site" id="siteHeader">
+  <div class="nav-shell">
+    <a href="#top" class="brand">
+    <img src="" alt="">
+      <div class="brand-text">
+        <div class="b1">Comprehensive Management</div>
+        <div class="b2">Solutions, Inc.</div>
+      </div>
+    </a>
+    <nav class="links">
+      <a class="navlink" href="#services">Services</a>
+      <a class="navlink" href="#additional">Additional Services</a>
+      <a class="navlink" href="#about">About</a>
+      <a class="navlink" href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-phone" href="tel:+12487912161">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (248) 791-2161
+      </a>
+      <a class="btn btn-ghost" href="mailto:info@compmanagementsolutions.com">Email us</a>
+      <a class="btn btn-primary" href="#contact">Request a proposal</a>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="navlink" href="#services">Services</a>
+    <a class="navlink" href="#additional">Additional Services</a>
+    <a class="navlink" href="#about">About</a>
+    <a class="navlink" href="#contact">Contact</a>
+    <a class="navlink" href="tel:+12487912161">Call (248) 791-2161</a>
+    <a class="btn btn-primary" href="#contact">Request a proposal</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-photo"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy reveal-up">
+        <div class="badge-row"><span class="dot"></span><span>Licensed &middot; Bonded &middot; Insured &mdash; Detroit, MI</span></div>
+        <h1>We make being <em>a landlord</em> easy.</h1>
+        <p class="hero-sub">Own your property with ease. Let us take care of the hard part &mdash; you collect rent and build equity. Full-service real estate management for single-family and multi-family units across metro Detroit.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="tel:+12487912161">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call (248) 791-2161
+          </a>
+          <a class="btn btn-ghost" href="#services" style="border-color: color-mix(in srgb, var(--navy-ink) 24%, transparent); color: var(--navy-ink);">See what we handle</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat reveal"><div class="num">20+</div><div class="label">years in Detroit real estate</div></div>
+          <div class="stat reveal"><div class="num">MI</div><div class="label">licensed real estate broker</div></div>
+          <div class="stat reveal"><div class="num">SF/MF</div><div class="label">single &amp; multi-family units</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" class="services-band">
+    <div class="wrap">
+      <div class="section-head reveal-up">
+        <div>
+          <span class="eyebrow">Full-service management</span>
+          <h2>Everything a rental property needs, handled in-house.</h2>
+        </div>
+        <p class="desc">From placing a tenant to filing the year-end report, one team carries the property through its whole cycle &mdash; so you collect rent instead of chasing it.</p>
+      </div>
+
+      <div class="check-grid">
+        <div class="check-item reveal">
+          <div class="check-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div><h3>Find &amp; place quality tenants</h3><p>Screening and placement for single-family and multi-family units.</p></div>
+        </div>
+        <div class="check-item reveal">
+          <div class="check-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <div><h3>Collect rent &amp; reporting</h3><p>Rent collection with monthly, quarterly and year-end reporting.</p></div>
+        </div>
+        <div class="check-item reveal">
+          <div class="check-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 1.4 0l1.6-1.6a1 1 0 0 0 0-1.4l-1.4-1.4a1 1 0 0 0-1.4 0l-1.6 1.6a1 1 0 0 0 0 1.4z"/><path d="m14 6-8.7 8.7a3 3 0 0 0-.8 1.4L3 21l4.9-1.5a3 3 0 0 0 1.4-.8L18 10"/></svg></div>
+          <div><h3>Manage maintenance &amp; repairs</h3><p>Ongoing upkeep so small issues don't become expensive ones.</p></div>
+        </div>
+        <div class="check-item reveal">
+          <div class="check-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/></svg></div>
+          <div><h3>Corporation resident agent</h3><p>Registered resident agent services for your ownership entity.</p></div>
+        </div>
+        <div class="check-item reveal">
+          <div class="check-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H3v10h6zM21 3h-6v18h6zM15 7H9v14h6z"/></svg></div>
+          <div><h3>Municipal compliance</h3><p>Keeping your property current with local municipality requirements.</p></div>
+        </div>
+        <div class="check-item reveal">
+          <div class="check-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 9-9M12.5 6.5 17.5 1.5 22.5 6.5 17.5 11.5zM8 16l-3 3-2-2 3-3z"/></svg></div>
+          <div><h3>Contractor negotiation</h3><p>We source and negotiate for services with qualified contractors.</p></div>
+        </div>
+        <div class="check-item reveal">
+          <div class="check-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+          <div><h3>Lease documents &amp; notices</h3><p>Lease preparation, required notices and rent-increase paperwork.</p></div>
+        </div>
+        <div class="check-item reveal">
+          <div class="check-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22Z"/></svg></div>
+          <div><h3>Legal proceedings</h3><p>We handle the legal process when a tenancy requires it.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL SERVICES -->
+  <section id="additional" class="addl">
+    <div class="wrap">
+      <div class="section-head reveal-up">
+        <div>
+          <span class="eyebrow">Beyond day-to-day management</span>
+          <h2>Protection for the property, especially when you're not local.</h2>
+        </div>
+        <p class="desc">Out-of-town ownership shouldn't mean out-of-sight risk. These are the details we handle so your asset stays protected between visits.</p>
+      </div>
+      <div class="addl-list">
+        <div class="addl-row reveal"><span class="n mono">01</span><span class="t">Trash-out, board-up and property monitoring for out-of-town landlords</span></div>
+        <div class="addl-row reveal"><span class="n mono">02</span><span class="t">State of Michigan housing laws enforced</span></div>
+        <div class="addl-row reveal"><span class="n mono">03</span><span class="t">Rental registration handled on your behalf</span></div>
+        <div class="addl-row reveal"><span class="n mono">04</span><span class="t">Coordination of all required inspections</span></div>
+        <div class="addl-row reveal"><span class="n mono">05</span><span class="t">Systematic maintenance to protect your asset's long-term value</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-wrap">
+      <div>
+        <div class="about-card reveal">
+          <div class="quote-mark">&ldquo;</div>
+          <p>We are a minority-owned company with over 20 years of real estate experience managing, rehabilitating, renting, screening and placing tenants in single-family and multi-family units.</p>
+          <div class="sig">Comprehensive Management Solutions, Inc.</div>
+        </div>
+        <div class="about-facts">
+          <div class="fact reveal"><div class="num">20+</div><div class="label">years of experience</div></div>
+          <div class="fact reveal"><div class="num">MI</div><div class="label">licensed broker-owned</div></div>
+          <div class="fact reveal"><div class="num">L&middot;B&middot;I</div><div class="label">licensed, bonded, insured</div></div>
+        </div>
+      </div>
+      <div class="about-detail reveal">
+        <span class="eyebrow" style="color:var(--accent); display:block; margin-bottom:12px;">About us</span>
+        <h3>Owned and managed by a licensed Michigan broker.</h3>
+        <p>Comprehensive Management Solutions, Inc. is managed and owned by a licensed Michigan real estate broker, operating in full compliance with state law. That license sits behind everything on this page &mdash; lease preparation, rent collection, maintenance, and legal proceedings alike.</p>
+        <p>We're licensed, bonded and insured, and documentation is available upon request. If you own a single-family or multi-family rental in metro Detroit and would rather collect rent than manage it, this is what we do.</p>
+        <div class="creds">
+          <span class="cred-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22Z"/></svg>Licensed</span>
+          <span class="cred-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Bonded</span>
+          <span class="cred-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22Z"/><path d="m9 12 2 2 4-4"/></svg>Insured</span>
+          <span class="cred-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a12 12 0 0 0 0 18M12 3a12 12 0 0 1 0 18M3 12h18"/></svg>Minority-owned</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section style="background: var(--bg-sunken); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head reveal-up">
+        <div>
+          <span class="eyebrow">How we start</span>
+          <h2>From first call to a leased, protected property.</h2>
+        </div>
+        <p class="desc">Three steps, one point of contact, and a broker's license standing behind the paperwork.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <div class="pnum">01</div>
+          <h3>Tell us about the property</h3>
+          <p>Call or email with the address and what you need &mdash; leasing, ongoing management, or both.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="pnum">02</div>
+          <h3>We put the paperwork in place</h3>
+          <p>Lease documents, notices, rental registration and any required inspections get coordinated up front.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="pnum">03</div>
+          <h3>You collect rent, we handle the rest</h3>
+          <p>Tenant placement, maintenance, compliance and reporting run on schedule &mdash; monthly, quarterly, year-end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / CTA -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <div>
+          <h2>Let us take the hard part off your plate.</h2>
+          <p>Call, email, or send the property address &mdash; we'll walk through what managing it would look like.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="tel:+12487912161">Call (248) 791-2161</a>
+            <a class="btn btn-ghost" href="mailto:info@compmanagementsolutions.com" style="border-color: color-mix(in srgb, var(--navy-ink) 24%, transparent); color: var(--navy-ink);">Email us</a>
+          </div>
+        </div>
+        <div class="cta-contact">
+          <div class="cta-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div><div class="l1">Phone</div><div class="l2">(248) 791-2161</div></div>
+          </div>
+          <div class="cta-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3 7 9 6 9-6"/></svg>
+            <div><div class="l1">Email</div><div class="l2">info@compmanagementsolutions.com</div></div>
+          </div>
+          <div class="cta-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><div class="l1">Office</div><div class="l2">18820 Woodward Ave, Detroit, MI 48203</div></div>
+          </div>
+          <div class="cta-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg>
+            <div><div class="l1">Web</div><div class="l2">compmanagementsolutions.com</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-band reveal">
+        <div class="form-head">
+          <h2>Contact Us</h2>
+          <p>Tell us about the property and we'll get back to you shortly.</p>
+        </div>
+        <form class="contact-form" id="cmsContactForm" novalidate>
+          <div class="f-group">
+            <label for="fName">Name<span class="req">*</span></label>
+            <div class="f-row">
+              <div class="f-field">
+                <input type="text" id="fName" name="firstName" placeholder="" required autocomplete="given-name">
+                <span class="f-sub">First</span>
+              </div>
+              <div class="f-field">
+                <input type="text" id="lName" name="lastName" placeholder="" required autocomplete="family-name">
+                <span class="f-sub">Last</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-group">
+            <label for="fEmail">Email<span class="req">*</span></label>
+            <input type="email" id="fEmail" name="email" placeholder="" required autocomplete="email">
+          </div>
+
+          <div class="f-group">
+            <label for="fMessage">Message<span class="req">*</span></label>
+            <textarea id="fMessage" name="message" required placeholder="Property address and what you need help with..."></textarea>
+          </div>
+
+          <div class="f-group" style="margin-bottom:0;">
+            <div class="bot-check" id="botCheck" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="bc-left">
+                <div class="bc-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <div class="bc-spin"></div>
+                <span class="bc-label">I'm not a robot</span>
+              </div>
+              <div class="bc-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                <span>Security<br>check</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn-submit" id="cmsSubmitBtn" disabled>Submit</button>
+            <span class="form-note" id="cmsFormNote">Verify you're not a robot, then submit &mdash; your email app will open with your message ready to send.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="fbrand">
+        <div class="brand-mark" role="img" aria-label="Comprehensive Management Solutions logo"><div class="icon"></div></div>
+        <div class="brand-text">
+          <div class="b1">Comprehensive Management</div>
+          <div class="b2">Solutions, Inc. &mdash; Detroit, MI</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#additional">Additional Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+12487912161">(248) 791-2161</a>
+      </div>
+    </div>
+    <div class="footer-copy">Licensed, bonded and insured. Managed and owned by a licensed Michigan real estate broker. Documentation available upon request.</div>
+  </div>
+</footer>
+
+<script>
+  // Mark that JS is running BEFORE anything else. CSS only hides
+  // .reveal/.reveal-up elements when html has the "js" class, so if
+  // this script never runs (blocked, stripped, or delayed), the page
+  // is fully visible from first paint — no permanently-blank sections.
+  document.documentElement.classList.add('js');
+
+  (function () {
+    var revealEls = document.querySelectorAll('.reveal, .reveal-up');
+    function showAll() {
+      revealEls.forEach(function (el) { el.classList.add('in'); });
+    }
+    try {
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        showAll();
+      }
+    } catch (err) {
+      showAll();
+    }
+    // Safety net: force everything visible shortly after load in case
+    // an element never intersects (e.g. it's already on screen before
+    // the observer attaches) or the observer misbehaves for any reason.
+    window.setTimeout(showAll, 400);
+  })();
+
+  (function () {
+    try {
+      var header = document.getElementById('siteHeader');
+      var btn = document.getElementById('burgerBtn');
+      var menu = document.getElementById('mobileMenu');
+
+      function onScroll() {
+        if (window.scrollY > 24) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+      }
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      btn.addEventListener('click', function () {
+        var open = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+      });
+    } catch (err) { /* nav still works without JS enhancement */ }
+  })();
+
+  (function () {
+    try {
+      // ---- contact form: self-styled bot check + mailto submit ----
+      var form = document.getElementById('cmsContactForm');
+      var botCheck = document.getElementById('botCheck');
+      var submitBtn = document.getElementById('cmsSubmitBtn');
+      var note = document.getElementById('cmsFormNote');
+      var verified = false;
+
+      function verify() {
+        if (verified || botCheck.classList.contains('checking')) return;
+        botCheck.classList.add('checking');
+        botCheck.setAttribute('aria-checked', 'false');
+        window.setTimeout(function () {
+          botCheck.classList.remove('checking');
+          botCheck.classList.add('checked');
+          botCheck.setAttribute('aria-checked', 'true');
+          verified = true;
+          submitBtn.disabled = false;
+          note.textContent = "Verified — fill in the form and submit when you're ready.";
+          note.className = 'form-note success';
+        }, 700);
+      }
+      botCheck.addEventListener('click', verify);
+      botCheck.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); verify(); }
+      });
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (!verified) {
+            note.textContent = "Please verify you're not a robot first.";
+            note.className = 'form-note error';
+            return;
+          }
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+          var first = form.firstName.value.trim();
+          var last = form.lastName.value.trim();
+          var email = form.email.value.trim();
+          var message = form.message.value.trim();
+          var subject = 'Property management inquiry from ' + first + ' ' + last;
+          var body = 'Name: ' + first + ' ' + last + '\n' + 'Email: ' + email + '\n\n' + message;
+          var mailto = 'mailto:info@compmanagementsolutions.com'
+            + '?subject=' + encodeURIComponent(subject)
+            + '&body=' + encodeURIComponent(body);
+          note.textContent = 'Opening your email app to send this to us...';
+          note.className = 'form-note success';
+          window.location.href = mailto;
+        });
+      }
+    } catch (err) { /* form still displays without JS enhancement */ }
+  })();
+</script>
+</body>
+</html>
