@@ -1,0 +1,2635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Estate &amp; Probate Property Services | Comprehensive Management Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --navy-950: #0c1c31;
+      --navy-900: #10233c;
+      --navy-800: #16304f;
+      --navy-700: #24456e;
+      --slate-500: #52708f;
+      --brass-600: #a8792f;
+      --brass-500: #c08a2e;
+      --brass-400: #d6a44a;
+      --paper-50: #faf7f0;
+      --paper-100: #f4efe3;
+      --paper-200: #ece4d2;
+      --ink-900: #191710;
+      --ink-700: #3d3a30;
+      --ink-500: #6b665a;
+      --line: #ddd3ba;
+
+      --bg: var(--paper-50);
+      --bg-raised: #ffffff;
+      --bg-sunken: var(--paper-100);
+      --text: var(--ink-900);
+      --text-muted: var(--ink-500);
+      --border: var(--line);
+      --accent: var(--brass-600);
+      --accent-ink: #ffffff;
+      --navy: var(--navy-900);
+      --navy-ink: #eef2f6;
+      --shadow: 0 1px 2px rgba(25, 23, 16, 0.06), 0 8px 24px -12px rgba(25, 23, 16, 0.18);
+      --logo-icon: url("https://res.cloudinary.com/l7c886x3/image/upload/v1788873968/compmanagementlogo.png");
+      --hero-photo: url("https://res.cloudinary.com/l7c886x3/image/upload/v1788874033/hero-bg.png");
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0e1420;
+        --bg-raised: #141c2b;
+        --bg-sunken: #0a0f18;
+        --text: #eee9dc;
+        --text-muted: #9aa3b4;
+        --border: #263349;
+        --accent: var(--brass-400);
+        --accent-ink: #191710;
+        --navy: #0a1424;
+        --navy-ink: #eef2f6;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 28px -14px rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #0e1420;
+      --bg-raised: #141c2b;
+      --bg-sunken: #0a0f18;
+      --text: #eee9dc;
+      --text-muted: #9aa3b4;
+      --border: #263349;
+      --accent: var(--brass-400);
+      --accent-ink: #191710;
+      --navy: #0a1424;
+      --navy-ink: #eef2f6;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 28px -14px rgba(0, 0, 0, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      text-wrap: balance;
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .mono {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      letter-spacing: 0.01em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 0 20px;
+      }
+    }
+
+    .eyebrow {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ---------- NAV (transparent over hero, pill on scroll) ---------- */
+    header.site {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 20px 20px 0;
+      transition: padding 0.35s ease;
+    }
+
+    header.site.scrolled {
+      padding-top: 14px;
+    }
+
+    .nav-shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid transparent;
+      box-shadow: none;
+      transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+    }
+
+    header.site.scrolled .nav-shell {
+      background: color-mix(in srgb, var(--navy) 94%, transparent);
+      border-color: color-mix(in srgb, var(--navy-ink) 14%, transparent);
+      box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(12px);
+      padding: 12px 24px;
+    }
+
+    header.site .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 0;
+    }
+
+    header.site .brand-mark {
+      height: 52px;
+      width: 60px;
+      background: var(--logo-icon) center / contain no-repeat;
+      flex-shrink: 0;
+    }
+
+    header.site .brand-text {
+      line-height: 1.15;
+      min-width: 0;
+    }
+
+    header.site .brand-text .b1 {
+      font-family: "Fraunces", serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--navy-ink);
+    }
+
+    header.site .brand-text .b1 .hl {
+      color: var(--brass-400);
+    }
+
+    header.site .brand-text .b2 {
+      font-size: 0.7rem;
+      color: color-mix(in srgb, var(--navy-ink) 65%, transparent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    header.site nav.links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    header.site nav.links a.navlink {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--navy-ink);
+      position: relative;
+      padding: 4px 0;
+    }
+
+    header.site nav.links a.navlink::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -3px;
+      height: 2px;
+      background: var(--brass-400);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+
+    header.site nav.links a.navlink:hover::after {
+      transform: scaleX(1);
+    }
+
+    header.site .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--navy-ink) 26%, transparent);
+      color: var(--navy-ink);
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    header.site .icon-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--navy-ink);
+    }
+
+    header.site .icon-btn:hover {
+      background: color-mix(in srgb, var(--navy-ink) 12%, transparent);
+    }
+
+    header.site .burger {
+      border-color: color-mix(in srgb, var(--navy-ink) 26%, transparent);
+    }
+
+    header.site .burger svg {
+      stroke: var(--navy-ink);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--brass-500);
+      color: #1a1206;
+      box-shadow: 0 8px 20px -8px rgba(192, 138, 46, 0.6);
+    }
+
+    .btn-primary:hover {
+      background: var(--brass-400);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      background: var(--bg-sunken);
+    }
+
+    .btn-navy {
+      background: var(--navy);
+      color: var(--navy-ink);
+    }
+
+    .btn-navy:hover {
+      background: var(--navy-700);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .burger svg {
+      width: 19px;
+      height: 19px;
+      stroke: var(--text);
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      max-width: 1180px;
+      margin: 8px auto 0;
+      padding: 14px 22px 18px;
+      border-radius: 20px;
+      background: color-mix(in srgb, var(--navy) 96%, transparent);
+      border: 1px solid color-mix(in srgb, var(--navy-ink) 14%, transparent);
+      box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(12px);
+    }
+
+    .mobile-menu a.navlink {
+      padding: 12px 2px;
+      font-weight: 500;
+      color: var(--navy-ink);
+      border-bottom: 1px solid color-mix(in srgb, var(--navy-ink) 12%, transparent);
+    }
+
+    .mobile-menu .btn {
+      margin-top: 12px;
+      justify-content: center;
+    }
+
+    .mobile-menu .btn-ghost {
+      border-color: color-mix(in srgb, var(--navy-ink) 26%, transparent);
+      color: var(--navy-ink);
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    @media (max-width: 480px) {
+      .mobile-menu {
+        padding: 12px 16px 16px;
+        margin: 6px auto 0;
+        border-radius: 16px;
+      }
+    }
+
+    @media (max-width: 860px) {
+
+      header.site nav.links,
+      header.site .nav-actions .btn-primary {
+        display: none;
+      }
+
+      .burger {
+        display: inline-flex;
+      }
+
+      header.site {
+        padding: 16px 16px 0;
+      }
+
+      .nav-shell {
+        padding: 10px 16px;
+        gap: 14px;
+        background: color-mix(in srgb, var(--navy) 94%, transparent);
+        border-color: color-mix(in srgb, var(--navy-ink) 14%, transparent);
+        box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(12px);
+      }
+
+      header.site.scrolled .nav-shell {
+        padding: 9px 15px;
+      }
+
+      header.site .brand {
+        gap: 10px;
+      }
+
+      header.site .brand-mark {
+        height: 44px;
+        width: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header.site {
+        padding: 12px 12px 0;
+      }
+
+      .nav-shell {
+        padding: 8px 12px;
+        gap: 8px;
+      }
+
+      header.site.scrolled .nav-shell {
+        padding: 8px 12px;
+      }
+
+      header.site .brand {
+        gap: 8px;
+      }
+
+      header.site .brand-mark {
+        height: 36px;
+        width: 42px;
+      }
+
+      header.site .brand-text .b1 {
+        font-size: 0.86rem;
+      }
+
+      header.site .brand-text .b2 {
+        font-size: 0.58rem;
+      }
+
+      header.site .nav-actions {
+        gap: 6px;
+      }
+
+      header.site .icon-btn {
+        width: 34px;
+        height: 34px;
+      }
+
+      header.site .icon-btn svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      .burger {
+        width: 34px;
+        height: 34px;
+      }
+
+      .burger svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      color: var(--navy-ink);
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      background-image: var(--hero-photo);
+      background-size: cover;
+      background-position: center 62%;
+    }
+
+    .hero-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(12, 28, 49, 0.82) 0%, rgba(12, 28, 49, 0.58) 38%, rgba(16, 35, 60, 0.72) 78%, rgba(22, 48, 79, 0.92) 100%),
+        linear-gradient(90deg, rgba(12, 28, 49, 0.55) 0%, rgba(12, 28, 49, 0.1) 45%, rgba(12, 28, 49, 0.05) 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      padding: 132px 0 76px;
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    @media (max-width: 1200px) {
+      .hero-inner {
+        padding-top: 112px;
+        padding-bottom: 56px;
+        min-height: 560px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+
+    .hero-copy {
+      max-width: 640px;
+    }
+
+    .badge-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: color-mix(in srgb, var(--navy-ink) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--navy-ink) 18%, transparent);
+      border-radius: 999px;
+      padding: 7px 14px;
+      margin-bottom: 22px;
+    }
+
+    .badge-row .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brass-400);
+    }
+
+    .badge-row span {
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      color: color-mix(in srgb, var(--navy-ink) 88%, transparent);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5.4vw, 4rem);
+      font-weight: 600;
+      line-height: 1.04;
+      letter-spacing: -0.01em;
+      max-width: 13ch;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--brass-400);
+    }
+
+    .hero-sub {
+      margin-top: 22px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: color-mix(in srgb, var(--navy-ink) 78%, transparent);
+      max-width: 46ch;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid color-mix(in srgb, var(--navy-ink) 16%, transparent);
+      margin-top: 44px;
+    }
+
+    .hero-stats .stat {
+      padding: 18px 20px 0 0;
+    }
+
+    .hero-stats .stat:not(:first-child) {
+      border-left: 1px solid color-mix(in srgb, var(--navy-ink) 16%, transparent);
+      padding-left: 20px;
+    }
+
+    .hero-stats .num {
+      font-family: "Fraunces", serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--brass-400);
+    }
+
+    .hero-stats .label {
+      font-size: 0.78rem;
+      color: color-mix(in srgb, var(--navy-ink) 70%, transparent);
+      margin-top: 3px;
+    }
+
+    /* ---------- SECTION HEADERS ---------- */
+    section {
+      padding: 96px 0;
+    }
+
+    @media (max-width: 720px) {
+      section {
+        padding: 64px 0;
+      }
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 52px;
+    }
+
+    @media (max-width: 800px) {
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    .section-head .eyebrow {
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.12;
+    }
+
+    .section-head .desc {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    /* ---------- SERVICES (checklist band) ---------- */
+    .services-band {
+      background: var(--bg-sunken);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 720px) {
+      .check-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .check-item {
+      background: var(--bg-raised);
+      padding: 26px 26px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .check-num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      padding-top: 3px;
+      min-width: 26px;
+    }
+
+    .check-ico {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      background: color-mix(in srgb, var(--accent) 14%, transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .check-ico svg {
+      width: 17px;
+      height: 17px;
+      stroke: var(--accent);
+    }
+
+    .check-item h3 {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .check-item p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ---------- ADDITIONAL SERVICES (navy strip list) ---------- */
+    .addl {
+      background: var(--navy);
+      color: var(--navy-ink);
+    }
+
+    .addl .section-head .eyebrow {
+      color: var(--brass-400);
+    }
+
+    .addl .section-head .desc {
+      color: color-mix(in srgb, var(--navy-ink) 72%, transparent);
+    }
+
+    .addl-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .addl-row {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      padding: 22px 0;
+      border-top: 1px solid color-mix(in srgb, var(--navy-ink) 14%, transparent);
+      align-items: center;
+      gap: 18px;
+    }
+
+    .addl-list .addl-row:last-child {
+      border-bottom: 1px solid color-mix(in srgb, var(--navy-ink) 14%, transparent);
+    }
+
+    .addl-row .n {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--brass-400);
+      font-size: 0.95rem;
+    }
+
+    .addl-row .t {
+      font-size: 1.06rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 640px) {
+      .addl-row {
+        grid-template-columns: 36px 1fr;
+      }
+
+      .addl-row .t {
+        font-size: 0.98rem;
+      }
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .about-wrap {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    .about-card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card .quote-mark {
+      font-family: "Fraunces", serif;
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .about-card p {
+      font-size: 1.06rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .about-card .sig {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .about-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 520px) {
+      .about-facts {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .fact {
+      background: var(--bg-raised);
+      padding: 20px 16px;
+    }
+
+    .fact .num {
+      font-family: "Fraunces", serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .fact .label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .about-detail h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .about-detail p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .cred-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      background: var(--bg-sunken);
+    }
+
+    .cred-pill svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--accent);
+    }
+
+    /* ---------- PROCESS ---------- */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 800px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .process-step {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      background: var(--bg-raised);
+      position: relative;
+    }
+
+    .process-step .pnum {
+      font-family: "Fraunces", serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: color-mix(in srgb, var(--accent) 30%, transparent);
+      margin-bottom: 12px;
+    }
+
+    .process-step h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      font-family: "Inter", sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .process-step p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* ---------- CTA / CONTACT ---------- */
+    .cta-band {
+      background: linear-gradient(135deg, var(--navy-950), var(--navy-800));
+      color: var(--navy-ink);
+      border-radius: 24px;
+      padding: 52px 44px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 800px) {
+      .cta-band {
+        grid-template-columns: 1fr;
+        padding: 38px 26px;
+      }
+    }
+
+    .cta-band h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .cta-band p {
+      color: color-mix(in srgb, var(--navy-ink) 78%, transparent);
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 42ch;
+    }
+
+    .cta-band .hero-ctas {
+      margin-top: 24px;
+    }
+
+    .cta-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cta-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .cta-line svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--brass-400);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .cta-line .l1 {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: color-mix(in srgb, var(--navy-ink) 60%, transparent);
+      margin-bottom: 2px;
+    }
+
+    .cta-line .l2 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    /* ---------- CONTACT FORM ---------- */
+    .form-band {
+      background: linear-gradient(180deg, var(--navy-950), var(--navy-800));
+      border-radius: 24px;
+      padding: 56px 48px 48px;
+      margin-top: 28px;
+      color: var(--navy-ink);
+    }
+
+    @media (max-width: 640px) {
+      .form-band {
+        padding: 40px 22px 34px;
+      }
+    }
+
+    .form-head {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .form-head h2 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 600;
+      color: var(--brass-400);
+    }
+
+    .form-head p {
+      margin-top: 10px;
+      color: color-mix(in srgb, var(--navy-ink) 74%, transparent);
+      font-size: 0.98rem;
+    }
+
+    .contact-form {
+      max-width: 620px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .f-group label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--brass-400);
+      margin-bottom: 10px;
+    }
+
+    .f-group label .req {
+      color: #e0645a;
+      margin-left: 3px;
+    }
+
+    .f-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    @media (max-width: 520px) {
+      .f-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .f-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .f-field .f-sub {
+      font-size: 0.76rem;
+      color: color-mix(in srgb, var(--navy-ink) 55%, transparent);
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-family: "Inter", sans-serif;
+      font-size: 0.95rem;
+      background: #ffffff;
+      color: var(--ink-900);
+      transition: box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--brass-400);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--brass-400) 35%, transparent);
+    }
+
+    .contact-form input:invalid:not(:placeholder-shown),
+    .contact-form textarea:invalid:not(:placeholder-shown) {
+      box-shadow: 0 0 0 2px #e0645a;
+    }
+
+    /* self-styled bot check (not affiliated with any third-party verification service) */
+    .bot-check {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 16px 18px;
+      max-width: 320px;
+    }
+
+    .bot-check .bc-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .bot-check .bc-box {
+      width: 26px;
+      height: 26px;
+      border-radius: 4px;
+      border: 2px solid #8a8a8a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      background: #fff;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .bot-check .bc-box svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      stroke: #fff;
+    }
+
+    .bot-check.checked .bc-box {
+      background: var(--brass-600);
+      border-color: var(--brass-600);
+    }
+
+    .bot-check.checked .bc-box svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .bot-check .bc-spin {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 3px solid #d9d9d9;
+      border-top-color: var(--brass-600);
+      display: none;
+      flex-shrink: 0;
+      animation: bcspin 0.7s linear infinite;
+    }
+
+    .bot-check.checking .bc-box {
+      display: none;
+    }
+
+    .bot-check.checking .bc-spin {
+      display: block;
+    }
+
+    @keyframes bcspin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .bot-check .bc-label {
+      font-size: 0.92rem;
+      color: var(--ink-900);
+      font-weight: 500;
+    }
+
+    .bot-check .bc-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      font-size: 0.56rem;
+      color: var(--ink-500);
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+
+    .bot-check .bc-badge svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--slate-500);
+    }
+
+    .contact-form .submit-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-submit {
+      background: var(--brass-500);
+      color: #1a1206;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 34px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background: var(--brass-400);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .form-note {
+      font-size: 0.82rem;
+      color: color-mix(in srgb, var(--navy-ink) 65%, transparent);
+    }
+
+    .form-note.error {
+      color: #f0a49c;
+    }
+
+    .form-note.success {
+      color: #9fd6a8;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner .fbrand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-inner .fbrand .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 9px;
+      background: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .footer-inner .fbrand .brand-mark .icon {
+      width: 100%;
+      height: 100%;
+      background: var(--logo-icon) center / 70% no-repeat;
+    }
+
+    .footer-inner .fbrand .brand-text .b1 {
+      font-family: "Fraunces", serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .footer-inner .fbrand .brand-text .b2 {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 18px;
+    }
+
+    /* ---------------------------------------------------------------
+     REVEAL ANIMATION — FIXED
+     Content is visible by default (opacity:1 / no transform).
+     Only when JavaScript successfully runs do we add the "js" class
+     to <html>; only then do reveal elements start hidden and animate
+     in on scroll. This means the page never depends on JS to be
+     readable — if a script is blocked, delayed, or stripped by a
+     screenshot/preview tool, everything still renders normally.
+  ----------------------------------------------------------------*/
+    .reveal,
+    .reveal-up {
+      opacity: 1;
+      transform: none;
+    }
+
+    html.js .reveal,
+    html.js .reveal-up {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s cubic-bezier(.2, .7, .3, 1), transform 0.65s cubic-bezier(.2, .7, .3, 1);
+    }
+
+    html.js .reveal-up {
+      transform: translateY(24px);
+    }
+
+    html.js .reveal.in,
+    html.js .reveal-up.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* stagger children by DOM order within a revealed group */
+    .check-item.reveal:nth-child(1) {
+      transition-delay: 0s;
+    }
+
+    .check-item.reveal:nth-child(2) {
+      transition-delay: 0.05s;
+    }
+
+    .check-item.reveal:nth-child(3) {
+      transition-delay: 0.1s;
+    }
+
+    .check-item.reveal:nth-child(4) {
+      transition-delay: 0.15s;
+    }
+
+    .check-item.reveal:nth-child(5) {
+      transition-delay: 0.2s;
+    }
+
+    .check-item.reveal:nth-child(6) {
+      transition-delay: 0.25s;
+    }
+
+    .check-item.reveal:nth-child(7) {
+      transition-delay: 0.3s;
+    }
+
+    .check-item.reveal:nth-child(8) {
+      transition-delay: 0.35s;
+    }
+
+    .addl-row.reveal:nth-child(1) {
+      transition-delay: 0s;
+    }
+
+    .addl-row.reveal:nth-child(2) {
+      transition-delay: 0.06s;
+    }
+
+    .addl-row.reveal:nth-child(3) {
+      transition-delay: 0.12s;
+    }
+
+    .addl-row.reveal:nth-child(4) {
+      transition-delay: 0.18s;
+    }
+
+    .addl-row.reveal:nth-child(5) {
+      transition-delay: 0.24s;
+    }
+
+    .process-step.reveal:nth-child(1) {
+      transition-delay: 0s;
+    }
+
+    .process-step.reveal:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    .process-step.reveal:nth-child(3) {
+      transition-delay: 0.2s;
+    }
+
+    .fact.reveal:nth-child(1) {
+      transition-delay: 0s;
+    }
+
+    .fact.reveal:nth-child(2) {
+      transition-delay: 0.08s;
+    }
+
+    .fact.reveal:nth-child(3) {
+      transition-delay: 0.16s;
+    }
+
+    .stat.reveal:nth-child(1) {
+      transition-delay: 0s;
+    }
+
+    .stat.reveal:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    .stat.reveal:nth-child(3) {
+      transition-delay: 0.2s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html.js .reveal,
+      html.js .reveal-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* =================================================================
+       ESTATE & PROBATE PAGE — additions (everything above is shared
+       with the homepage; only new components live below)
+    ================================================================= */
+
+    /* inline SVG icon sprite defaults (zero specificity so existing
+       icon rules like .check-ico svg still win) */
+    :where(svg.i) {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .nav-current::after {
+      transform: scaleX(1) !important;
+    }
+
+    .hero h1 {
+      max-width: 15ch;
+    }
+
+    /* ---------- LEAD (who we help) ---------- */
+    .lead {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+      max-width: 820px;
+    }
+
+    .lead p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      line-height: 1.65;
+    }
+
+    .lead .creds {
+      margin-top: 0;
+    }
+
+    .check-item h3 {
+      margin-bottom: 0;
+      align-self: center;
+    }
+
+    .check-item {
+      align-items: center;
+    }
+
+    @media (min-width: 721px) {
+      .check-item.wide {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .check-grid .reveal:nth-child(2n) {
+      transition-delay: 0.05s;
+    }
+
+    /* ---------- OPTIONS (sell / as-is / repair / rent) ---------- */
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 720px) {
+      .option-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .option-grid .process-step {
+      padding: 30px 28px;
+    }
+
+    .option-grid .process-step .tag {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .option-grid .process-step h3 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .option-grid .process-step p {
+      font-size: 0.98rem;
+    }
+
+    .option-grid .reveal:nth-child(2) {
+      transition-delay: 0.08s;
+    }
+
+    .option-grid .reveal:nth-child(3) {
+      transition-delay: 0.16s;
+    }
+
+    .option-grid .reveal:nth-child(4) {
+      transition-delay: 0.24s;
+    }
+
+    /* ---------- ASSESSMENT pills ---------- */
+    .cred-pill .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .about-card .eyebrow {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .about-facts .fact .num {
+      font-size: 1.5rem;
+    }
+
+    /* ---------- VACANT (navy list extras) ---------- */
+    .addl-row.reveal:nth-child(6) {
+      transition-delay: 0.08s;
+    }
+
+    .addl-row.reveal:nth-child(7) {
+      transition-delay: 0.1s;
+    }
+
+    .addl-row.reveal:nth-child(8) {
+      transition-delay: 0.12s;
+    }
+
+    .addl-row.reveal:nth-child(9) {
+      transition-delay: 0.14s;
+    }
+
+    .addl-row.reveal:nth-child(10) {
+      transition-delay: 0.16s;
+    }
+
+    .addl-list.two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 56px;
+    }
+
+    .addl-list.two-col .addl-row:last-child {
+      border-bottom: none;
+    }
+
+    .addl-list.two-col .addl-row:nth-last-child(-n+2) {
+      border-bottom: 1px solid color-mix(in srgb, var(--navy-ink) 14%, transparent);
+    }
+
+    @media (max-width: 800px) {
+      .addl-list.two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .addl-list.two-col .addl-row:nth-last-child(2) {
+        border-bottom: none;
+      }
+
+      .addl-list.two-col .addl-row:last-child {
+        border-bottom: 1px solid color-mix(in srgb, var(--navy-ink) 14%, transparent);
+      }
+    }
+
+    .addl-note {
+      margin-top: 32px;
+      padding: 20px 24px;
+      border-left: 3px solid var(--brass-400);
+      background: color-mix(in srgb, var(--navy-ink) 6%, transparent);
+      border-radius: 0 12px 12px 0;
+      color: color-mix(in srgb, var(--navy-ink) 86%, transparent);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* ---------- SUPPORT cards (out of state / attorneys) ---------- */
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 800px) {
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .support-grid .about-card {
+      padding: 34px 32px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .support-grid .about-card h3 {
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .support-grid .about-card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .support-grid .about-card p.strong {
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 0;
+      margin-top: auto;
+      padding-top: 6px;
+    }
+
+    .support-ico {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--accent) 14%, transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .support-ico svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--accent);
+    }
+
+    .support-grid .reveal:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    /* ---------- FORM: radios / checkboxes / tel ---------- */
+    .contact-form input[type="tel"] {
+      width: 100%;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-family: "Inter", sans-serif;
+      font-size: 0.95rem;
+      background: #ffffff;
+      color: var(--ink-900);
+      transition: box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .contact-form input[type="tel"]:focus {
+      outline: none;
+      border-color: var(--brass-400);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--brass-400) 35%, transparent);
+    }
+
+    .f-group .f-label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--brass-400);
+      margin-bottom: 10px;
+    }
+
+    .opt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    @media (max-width: 520px) {
+      .opt-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .f-group label.opt {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      padding: 11px 14px;
+      border-radius: 8px;
+      border: 1px solid color-mix(in srgb, var(--navy-ink) 18%, transparent);
+      background: color-mix(in srgb, var(--navy-ink) 6%, transparent);
+      color: var(--navy-ink);
+      font-weight: 500;
+      font-size: 0.9rem;
+      line-height: 1.3;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .f-group label.opt:hover {
+      background: color-mix(in srgb, var(--navy-ink) 11%, transparent);
+    }
+
+    .f-group label.opt:has(input:checked) {
+      border-color: var(--brass-400);
+      background: color-mix(in srgb, var(--brass-400) 16%, transparent);
+    }
+
+    .f-group label.opt:has(input:focus-visible) {
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--brass-400) 35%, transparent);
+    }
+
+    .opt input {
+      accent-color: var(--brass-500);
+      width: 17px;
+      height: 17px;
+      margin: 0;
+      flex-shrink: 0;
+    }
+
+    /* ---------- HERO VIDEO ---------- */
+    /* video only: drop the house photo; navy shows briefly / if video can't play */
+    .hero-photo {
+      background-image: none;
+      background-color: var(--navy-950);
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 62%;
+      opacity: 0;
+      transition: opacity 0.9s ease;
+      pointer-events: none;
+    }
+
+    .hero-video.ready {
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <path d="m3 7 9 6 9-6" />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+        <circle cx="12" cy="10" r="3" />
+      </symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z" />
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7" />
+        <path d="m21 21-4.3-4.3" />
+      </symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24">
+        <path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6" />
+      </symbol>
+      <symbol id="i-box" viewBox="0 0 24 24">
+        <path d="M21 8 12 3 3 8v8l9 5 9-5zM3 8l9 5 9-5M12 13v8" />
+      </symbol>
+      <symbol id="i-tag" viewBox="0 0 24 24">
+        <path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8zM7.5 7.5h.01" />
+      </symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24">
+        <path
+          d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
+      </symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24">
+        <path d="m12 3 1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" />
+      </symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24">
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10zM2 21c0-3 1.9-5.4 5-7" />
+      </symbol>
+      <symbol id="i-snow" viewBox="0 0 24 24">
+        <path d="M12 2v20M4.9 7l14.2 10M4.9 17 19.1 7M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5" />
+      </symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24">
+        <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z" />
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <circle cx="9" cy="7" r="4" />
+        <path d="M2 21v-1a6 6 0 0 1 12 0v1M17 3.1a4 4 0 0 1 0 7.8M22 21v-1a6 6 0 0 0-4-5.6" />
+      </symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24">
+        <rect x="3" y="11" width="18" height="10" rx="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      </symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
+        <circle cx="12" cy="12" r="3" />
+      </symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24">
+        <path d="M13 2 3 14h9l-1 8 10-12h-9z" />
+      </symbol>
+      <symbol id="i-filecheck" viewBox="0 0 24 24">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 15l2 2 4-4" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22Z" />
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M3 3v18h18M7 15l4-4 3 3 5-6" />
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path d="m3 11 9-8 9 8M5 10v10h14V10M10 20v-6h4v6" />
+      </symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24">
+        <path d="M4 21V4M4 4h14l-3 4 3 4H4" />
+      </symbol>
+      <symbol id="i-circlecheck" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="m9 12 2 2 4-4" />
+      </symbol>
+      <symbol id="i-key" viewBox="0 0 24 24">
+        <circle cx="7.5" cy="15.5" r="4.5" />
+        <path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3" />
+      </symbol>
+      <symbol id="i-building" viewBox="0 0 24 24">
+        <rect x="4" y="2" width="16" height="20" rx="2" />
+        <path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01" />
+      </symbol>
+      <symbol id="i-plane" viewBox="0 0 24 24">
+        <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+      </symbol>
+      <symbol id="i-scale" viewBox="0 0 24 24">
+        <path d="M12 3v18M5 21h14M5 7h14M5 7l-3 8a3.5 3.5 0 0 0 6 0zM19 7l-3 8a3.5 3.5 0 0 0 6 0z" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="site" id="siteHeader">
+    <div class="nav-shell">
+      <a href="index.html" class="brand">
+        <div class="brand-mark" aria-label="Comprehensive Management Solutions logo"></div>
+        <div class="brand-text">
+          <div class="b1"><span class="hl">Comprehensive</span> Management</div>
+          <div class="b2">Solutions, Inc.</div>
+        </div>
+      </a>
+      <nav class="links">
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="#services">What We Handle</a>
+        <a class="navlink" href="#options">Your Options</a>
+        <a class="navlink" href="#vacant">Vacant Property</a>
+        <a class="navlink" href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="icon-btn" href="tel:+12487912161" aria-label="Call (248) 791-2161">
+          <svg class="i" viewBox="0 0 24 24">
+            <use href="#i-phone" />
+          </svg>
+        </a>
+        <a class="icon-btn" href="mailto:info@compmanagementsolutions.com" aria-label="Email us">
+          <svg class="i" viewBox="0 0 24 24">
+            <use href="#i-mail" />
+          </svg>
+        </a>
+        <a class="btn btn-primary" href="#consult">Request a consultation</a>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a class="navlink" href="index.html">Home</a>
+      <a class="navlink" href="#services">What We Handle</a>
+      <a class="navlink" href="#options">Your Options</a>
+      <a class="navlink" href="#vacant">Vacant Property</a>
+      <a class="navlink" href="#contact">Contact</a>
+      <a class="navlink" href="tel:+12487912161">Call (248) 791-2161</a>
+      <a class="btn btn-primary" href="#consult">Request a consultation</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-photo">
+        <video class="hero-video" id="heroVideo" muted loop playsinline autoplay preload="metadata"
+          aria-hidden="true" tabindex="-1"></video>
+      </div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy reveal-up">
+          <div class="badge-row"><span class="dot"></span><span>Estate &amp; Probate Property Services</span></div>
+          <h1>One property. <em>One point of contact.</em></h1>
+          <p class="hero-sub">Managing a property after the death of a loved one can quickly become overwhelming
+            &mdash; especially when it needs to be cleaned out, maintained, repaired, secured, rented, or sold. We
+            provide complete estate property support, from beginning to end.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#consult">Request an Estate Property Consultation</a>
+            <a class="btn btn-ghost" href="tel:+12487912161"
+              style="border-color: color-mix(in srgb, var(--navy-ink) 24%, transparent); color: var(--navy-ink);">
+              <svg class="i" width="16" height="16" viewBox="0 0 24 24">
+                <use href="#i-phone" />
+              </svg>
+              Call (248) 791-2161</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat reveal">
+              <div class="num">1</div>
+              <div class="label">point of contact, start to finish</div>
+            </div>
+            <div class="stat reveal">
+              <div class="num">4</div>
+              <div class="label">paths: sell, as-is, repair, rent</div>
+            </div>
+            <div class="stat reveal">
+              <div class="num">Metro</div>
+              <div class="label">Detroit local presence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT WE HANDLE -->
+    <section id="services" class="services-band">
+      <div class="wrap">
+        <div class="section-head reveal-up">
+          <div>
+            <span class="eyebrow">What we coordinate</span>
+            <h2>We handle the property so you can handle the estate.</h2>
+          </div>
+          <p class="desc">Instead of calling multiple contractors, cleaners, landscapers, estate-sale companies, and
+            real estate professionals, you can work with one experienced real estate and property-management team.</p>
+        </div>
+
+        <div class="lead reveal">
+          <p>Whether you are a Personal Representative, Executor, Administrator, heir, or attorney assisting an estate,
+            we can help coordinate the work necessary to protect the property, prepare it for its next chapter, and
+            determine the best course of action. Depending on the property's needs, we can coordinate:</p>
+          <div class="creds">
+            <span class="cred-pill"><span class="dot"></span>Personal Representative</span>
+            <span class="cred-pill"><span class="dot"></span>Executor</span>
+            <span class="cred-pill"><span class="dot"></span>Administrator</span>
+            <span class="cred-pill"><span class="dot"></span>Heir</span>
+            <span class="cred-pill"><span class="dot"></span>Attorney</span>
+          </div>
+        </div>
+
+        <div class="check-grid">
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-search" /></svg></div>
+            <h3>Property inspections and condition assessments</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-trash" /></svg></div>
+            <h3>Property clean-outs and debris removal</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-box" /></svg></div>
+            <h3>Removal of unwanted furniture and personal property</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-tag" /></svg></div>
+            <h3>Estate-sale coordination</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-heart" /></svg></div>
+            <h3>Donation and disposal coordination</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-sparkle" /></svg></div>
+            <h3>Cleaning services</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-leaf" /></svg></div>
+            <h3>Lawn care and exterior maintenance</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-snow" /></svg></div>
+            <h3>Snow removal</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-wrench" /></svg></div>
+            <h3>Minor repairs and maintenance</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-users" /></svg></div>
+            <h3>Contractor coordination</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-lock" /></svg></div>
+            <h3>Lock changes and property security</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-eye" /></svg></div>
+            <h3>Vacant-property monitoring</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-zap" /></svg></div>
+            <h3>Utility coordination</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-filecheck" /></svg></div>
+            <h3>City rental registration and property-compliance coordination</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-shield" /></svg></div>
+            <h3>Property preservation and winterization</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-chart" /></svg></div>
+            <h3>Market-value analysis</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-home" /></svg></div>
+            <h3>Preparation for sale</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-flag" /></svg></div>
+            <h3>Real estate listing and marketing</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-circlecheck" /></svg></div>
+            <h3>As-is sale options</h3>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-key" /></svg></div>
+            <h3>Rental preparation</h3>
+          </div>
+          <div class="check-item wide reveal">
+            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-building" /></svg></div>
+            <h3>Leasing and ongoing property management</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONS -->
+    <section id="options">
+      <div class="wrap">
+        <div class="section-head reveal-up">
+          <div>
+            <span class="eyebrow">Not sure where to start?</span>
+            <h2>Sell, rent, repair, or sell as-is?</h2>
+          </div>
+          <p class="desc">You don't have to make that decision before contacting us. We can evaluate the property's
+            current condition and help you understand the available real estate options.</p>
+        </div>
+
+        <div class="option-grid">
+          <div class="process-step reveal">
+            <span class="eyebrow tag">Option 01</span>
+            <h3>Sell</h3>
+            <p>If selling the property makes the most sense, we can develop a plan to prepare, price, market, and sell
+              the property.</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="eyebrow tag">Option 02</span>
+            <h3>Sell As-Is</h3>
+            <p>Sometimes an estate does not want to invest additional money or time into a property. We can discuss
+              marketing the property in its current condition and help the estate evaluate appropriate sale
+              strategies.</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="eyebrow tag">Option 03</span>
+            <h3>Repair &amp; Sell</h3>
+            <p>For properties where selected improvements may increase marketability or value, we can help identify
+              practical repairs and coordinate the work needed before listing.</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="eyebrow tag">Option 04</span>
+            <h3>Keep &amp; Rent</h3>
+            <p>An inherited property does not necessarily have to be sold. If the heirs decide to retain it as an
+              investment, our property-management services can assist with preparing the property, finding a qualified
+              tenant, collecting rent, coordinating maintenance, and managing the property on an ongoing basis.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSESSMENT -->
+    <section id="assessment"
+      style="background: var(--bg-sunken); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="wrap about-wrap">
+        <div>
+          <div class="about-card reveal">
+            <span class="eyebrow">Estate Property Action Plan</span>
+            <div class="quote-mark">&ldquo;</div>
+            <p>A recommended plan outlining what should be addressed now, what can wait, and what may help prepare the
+              property for sale or rental.</p>
+            <div class="sig">Comprehensive Management Solutions, Inc.</div>
+          </div>
+          <div class="about-facts">
+            <div class="fact reveal">
+              <div class="num">Now</div>
+              <div class="label">what should be addressed first</div>
+            </div>
+            <div class="fact reveal">
+              <div class="num">Later</div>
+              <div class="label">what can wait</div>
+            </div>
+            <div class="fact reveal">
+              <div class="num">Next</div>
+              <div class="label">what prepares it for sale or rental</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-detail reveal">
+          <span class="eyebrow" style="color:var(--accent); display:block; margin-bottom:12px;">Estate Property
+            Assessment</span>
+          <h3>Every property is different.</h3>
+          <p>Our process begins with understanding the estate's goals and evaluating the property. From there, we
+            develop a recommended Estate Property Action Plan so you know what to do first and what can wait.</p>
+          <p>We can identify immediate concerns such as:</p>
+          <div class="creds">
+            <span class="cred-pill"><span class="dot"></span>Security</span>
+            <span class="cred-pill"><span class="dot"></span>Deferred maintenance</span>
+            <span class="cred-pill"><span class="dot"></span>Debris</span>
+            <span class="cred-pill"><span class="dot"></span>Utilities</span>
+            <span class="cred-pill"><span class="dot"></span>Exterior maintenance</span>
+            <span class="cred-pill"><span class="dot"></span>Occupancy</span>
+            <span class="cred-pill"><span class="dot"></span>General property condition</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VACANT PROPERTY -->
+    <section id="vacant" class="addl">
+      <div class="wrap">
+        <div class="section-head reveal-up">
+          <div>
+            <span class="eyebrow">Vacant property?</span>
+            <h2>We can help protect it.</h2>
+          </div>
+          <p class="desc">Vacant inherited properties can create additional responsibilities for an estate. Depending
+            on the circumstances, we can help coordinate:</p>
+        </div>
+        <div class="addl-list two-col">
+          <div class="addl-row reveal"><span class="n mono">01</span><span class="t">Lock changes</span></div>
+          <div class="addl-row reveal"><span class="n mono">02</span><span class="t">Periodic property checks</span>
+          </div>
+          <div class="addl-row reveal"><span class="n mono">03</span><span class="t">Lawn and snow service</span></div>
+          <div class="addl-row reveal"><span class="n mono">04</span><span class="t">Debris removal</span></div>
+          <div class="addl-row reveal"><span class="n mono">05</span><span class="t">Minor maintenance</span></div>
+          <div class="addl-row reveal"><span class="n mono">06</span><span class="t">Utility issues</span></div>
+          <div class="addl-row reveal"><span class="n mono">07</span><span class="t">Winterization</span></div>
+          <div class="addl-row reveal"><span class="n mono">08</span><span class="t">Contractor access</span></div>
+          <div class="addl-row reveal"><span class="n mono">09</span><span class="t">Property preparation</span></div>
+          <div class="addl-row reveal"><span class="n mono">10</span><span class="t">Municipal compliance matters</span>
+          </div>
+        </div>
+        <p class="addl-note reveal">This is especially helpful for Personal Representatives and heirs who live outside
+          Metro Detroit and cannot regularly visit the property themselves.</p>
+      </div>
+    </section>
+
+    <!-- SUPPORT: OUT OF STATE + ATTORNEYS -->
+    <section id="support">
+      <div class="wrap">
+        <div class="section-head reveal-up">
+          <div>
+            <span class="eyebrow">Local real estate &amp; property management experience</span>
+            <h2>We look at the entire property &mdash; not simply the eventual sale.</h2>
+          </div>
+          <p class="desc">Estate properties often present issues that extend beyond a traditional real estate
+            transaction. Whether the property needs attention immediately or the estate is still determining what to do
+            with it, we can help develop a practical plan.</p>
+        </div>
+
+        <div class="support-grid">
+          <div class="about-card reveal">
+            <div class="support-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-plane" /></svg></div>
+            <h3>Out of state? You don't have to manage this from hundreds of miles away.</h3>
+            <p>If you inherited a Metro Detroit property but live outside Michigan, we can serve as your local point of
+              contact. We can inspect the property, document its condition, coordinate vendors, provide updates,
+              oversee approved work, and help prepare the property for sale or rental.</p>
+            <p class="strong">You don't have to fly into Michigan every time something needs to be handled.</p>
+          </div>
+          <div class="about-card reveal">
+            <div class="support-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-scale" /></svg></div>
+            <h3>Support for probate and estate attorneys.</h3>
+            <p>We also work with attorneys who need a reliable real estate and property-management resource for their
+              clients. When an estate contains real property, we can assist your client with the practical
+              property-related work that often falls outside the attorney's legal services &mdash; from securing and
+              maintaining the property to preparing it for sale or rental.</p>
+            <p class="strong">Our goal is simple: make the real estate portion of the estate easier for your client to
+              manage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section id="contact"
+      style="background: var(--bg-sunken); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="wrap">
+        <div class="cta-band reveal">
+          <div>
+            <h2>Start with a property consultation.</h2>
+            <p>You don't need to have everything figured out before calling us. Tell us about the property, its current
+              condition, where it is located, and what you know about the estate. We'll help you identify the next
+              steps.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="#consult">Request an Estate Property Consultation</a>
+              <a class="btn btn-ghost" href="tel:+12487912161"
+                style="border-color: color-mix(in srgb, var(--navy-ink) 24%, transparent); color: var(--navy-ink);">Call
+                (248) 791-2161</a>
+            </div>
+          </div>
+          <div class="cta-contact">
+            <div class="cta-line">
+              <svg class="i" viewBox="0 0 24 24"><use href="#i-phone" /></svg>
+              <div>
+                <div class="l1">Phone</div>
+                <div class="l2">(248) 791-2161</div>
+              </div>
+            </div>
+            <div class="cta-line">
+              <svg class="i" viewBox="0 0 24 24"><use href="#i-mail" /></svg>
+              <div>
+                <div class="l1">Email</div>
+                <div class="l2">info@compmanagementsolutions.com</div>
+              </div>
+            </div>
+            <div class="cta-line">
+              <svg class="i" viewBox="0 0 24 24"><use href="#i-pin" /></svg>
+              <div>
+                <div class="l1">Office</div>
+                <div class="l2">18820 Woodward Ave, Detroit, MI 48203</div>
+              </div>
+            </div>
+            <div class="cta-line">
+              <svg class="i" viewBox="0 0 24 24"><use href="#i-globe" /></svg>
+              <div>
+                <div class="l1">Web</div>
+                <div class="l2">compmanagementsolutions.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-band reveal" id="consult">
+          <div class="form-head">
+            <h2>Tell Us About the Estate Property</h2>
+            <p>Share what you know &mdash; we'll help with the rest.</p>
+          </div>
+          <form class="contact-form" id="cmsContactForm" novalidate>
+            <div class="f-group">
+              <label for="fName">Name<span class="req">*</span></label>
+              <div class="f-row">
+                <div class="f-field">
+                  <input type="text" id="fName" name="firstName" placeholder="" required autocomplete="given-name">
+                  <span class="f-sub">First</span>
+                </div>
+                <div class="f-field">
+                  <input type="text" id="lName" name="lastName" placeholder="" required autocomplete="family-name">
+                  <span class="f-sub">Last</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="f-row">
+              <div class="f-group">
+                <label for="fPhone">Phone<span class="req">*</span></label>
+                <input type="tel" id="fPhone" name="phone" placeholder="" required autocomplete="tel">
+              </div>
+              <div class="f-group">
+                <label for="fEmail">Email<span class="req">*</span></label>
+                <input type="email" id="fEmail" name="email" placeholder="" required autocomplete="email">
+              </div>
+            </div>
+
+            <div class="f-row">
+              <div class="f-group">
+                <label for="fAddress">Property Address<span class="req">*</span></label>
+                <input type="text" id="fAddress" name="address" placeholder="" required>
+              </div>
+              <div class="f-group">
+                <label for="fCity">City</label>
+                <input type="text" id="fCity" name="city" placeholder="" autocomplete="address-level2">
+              </div>
+            </div>
+
+            <div class="f-group" role="radiogroup" aria-labelledby="lblRole">
+              <span class="f-label" id="lblRole">Are you the:</span>
+              <div class="opt-grid">
+                <label class="opt"><input type="radio" name="role" value="Personal Representative / Executor"><span>Personal Representative / Executor</span></label>
+                <label class="opt"><input type="radio" name="role" value="Administrator"><span>Administrator</span></label>
+                <label class="opt"><input type="radio" name="role" value="Heir / Family Member"><span>Heir / Family Member</span></label>
+                <label class="opt"><input type="radio" name="role" value="Attorney"><span>Attorney</span></label>
+                <label class="opt"><input type="radio" name="role" value="Other"><span>Other</span></label>
+              </div>
+            </div>
+
+            <div class="f-group" role="radiogroup" aria-labelledby="lblOcc">
+              <span class="f-label" id="lblOcc">Is the property currently:</span>
+              <div class="opt-grid">
+                <label class="opt"><input type="radio" name="occupancy" value="Vacant"><span>Vacant</span></label>
+                <label class="opt"><input type="radio" name="occupancy" value="Owner/Family Occupied"><span>Owner/Family Occupied</span></label>
+                <label class="opt"><input type="radio" name="occupancy" value="Tenant Occupied"><span>Tenant Occupied</span></label>
+                <label class="opt"><input type="radio" name="occupancy" value="Unknown"><span>Unknown</span></label>
+              </div>
+            </div>
+
+            <div class="f-group" role="group" aria-labelledby="lblHelp">
+              <span class="f-label" id="lblHelp">What assistance do you need?</span>
+              <div class="opt-grid">
+                <label class="opt"><input type="checkbox" name="assist" value="Property inspection"><span>Property inspection</span></label>
+                <label class="opt"><input type="checkbox" name="assist" value="Clean-out / debris removal"><span>Clean-out / debris removal</span></label>
+                <label class="opt"><input type="checkbox" name="assist" value="Estate sale"><span>Estate sale</span></label>
+                <label class="opt"><input type="checkbox" name="assist" value="Lawn / exterior maintenance"><span>Lawn / exterior maintenance</span></label>
+                <label class="opt"><input type="checkbox" name="assist" value="Repairs"><span>Repairs</span></label>
+                <label class="opt"><input type="checkbox" name="assist" value="Property security"><span>Property security</span></label>
+                <label class="opt"><input type="checkbox" name="assist" value="Prepare property for sale"><span>Prepare property for sale</span></label>
+                <label class="opt"><input type="checkbox" name="assist" value="Sell property as-is"><span>Sell property as-is</span></label>
+                <label class="opt"><input type="checkbox" name="assist" value="Prepare property for rental"><span>Prepare property for rental</span></label>
+                <label class="opt"><input type="checkbox" name="assist" value="Property management"><span>Property management</span></label>
+                <label class="opt"><input type="checkbox" name="assist" value="Not sure — I need guidance"><span>Not sure &mdash; I need guidance</span></label>
+              </div>
+            </div>
+
+            <div class="f-group">
+              <label for="fMessage">Tell us anything else we should know about the property</label>
+              <textarea id="fMessage" name="message" placeholder=""></textarea>
+            </div>
+
+            <div class="f-group" style="margin-bottom:0;">
+              <div class="bot-check" id="botCheck" role="checkbox" aria-checked="false" tabindex="0">
+                <div class="bc-left">
+                  <div class="bc-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                  </div>
+                  <div class="bc-spin"></div>
+                  <span class="bc-label">I'm not a robot</span>
+                </div>
+                <div class="bc-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="4" y="10" width="16" height="10" rx="2" />
+                    <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+                  </svg>
+                  <span>Security<br>check</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="submit-row">
+              <button type="submit" class="btn-submit" id="cmsSubmitBtn" disabled>Request Consultation</button>
+              <span class="form-note" id="cmsFormNote">Verify you're not a robot, then submit &mdash; your email app
+                will open with your message ready to send.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="fbrand">
+          <div class="brand-mark" role="img" aria-label="Comprehensive Management Solutions logo">
+            <div class="icon"></div>
+          </div>
+          <div class="brand-text">
+            <div class="b1">Comprehensive Management</div>
+            <div class="b2">Solutions, Inc. &mdash; Detroit, MI</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="#services">What We Handle</a>
+          <a href="#options">Your Options</a>
+          <a href="#vacant">Vacant Property</a>
+          <a href="#contact">Contact</a>
+          <a href="tel:+12487912161">(248) 791-2161</a>
+        </div>
+      </div>
+      <div class="footer-copy">Licensed, bonded and insured. Managed and owned by a licensed Michigan real estate
+        broker. Documentation available upon request.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mark that JS is running BEFORE anything else. CSS only hides
+    // .reveal/.reveal-up elements when html has the "js" class, so if
+    // this script never runs (blocked, stripped, or delayed), the page
+    // is fully visible from first paint — no permanently-blank sections.
+    document.documentElement.classList.add('js');
+
+    (function () {
+      var revealEls = document.querySelectorAll('.reveal, .reveal-up');
+      function showAll() {
+        revealEls.forEach(function (el) { el.classList.add('in'); });
+      }
+      try {
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+            });
+          }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+          revealEls.forEach(function (el) { io.observe(el); });
+        } else {
+          showAll();
+        }
+      } catch (err) {
+        showAll();
+      }
+      // Safety net: force everything visible shortly after load in case
+      // an element never intersects or the observer misbehaves.
+      window.setTimeout(showAll, 400);
+    })();
+
+    (function () {
+      try {
+        var header = document.getElementById('siteHeader');
+        var btn = document.getElementById('burgerBtn');
+        var menu = document.getElementById('mobileMenu');
+
+        function onScroll() {
+          if (window.scrollY > 24) header.classList.add('scrolled');
+          else header.classList.remove('scrolled');
+        }
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        btn.addEventListener('click', function () {
+          var open = menu.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        menu.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+        });
+      } catch (err) { /* nav still works without JS enhancement */ }
+    })();
+
+    (function () {
+      try {
+        // ---- contact form: self-styled bot check + mailto submit ----
+        var form = document.getElementById('cmsContactForm');
+        var botCheck = document.getElementById('botCheck');
+        var submitBtn = document.getElementById('cmsSubmitBtn');
+        var note = document.getElementById('cmsFormNote');
+        var verified = false;
+
+        function verify() {
+          if (verified || botCheck.classList.contains('checking')) return;
+          botCheck.classList.add('checking');
+          botCheck.setAttribute('aria-checked', 'false');
+          window.setTimeout(function () {
+            botCheck.classList.remove('checking');
+            botCheck.classList.add('checked');
+            botCheck.setAttribute('aria-checked', 'true');
+            verified = true;
+            submitBtn.disabled = false;
+            note.textContent = "Verified — fill in the form and submit when you're ready.";
+            note.className = 'form-note success';
+          }, 700);
+        }
+        botCheck.addEventListener('click', verify);
+        botCheck.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); verify(); }
+        });
+
+        function checkedValue(name) {
+          var el = form.querySelector('input[name="' + name + '"]:checked');
+          return el ? el.value : '';
+        }
+
+        if (form) {
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!verified) {
+              note.textContent = "Please verify you're not a robot first.";
+              note.className = 'form-note error';
+              return;
+            }
+            if (!form.checkValidity()) {
+              form.reportValidity();
+              return;
+            }
+            var first = form.firstName.value.trim();
+            var last = form.lastName.value.trim();
+            var phone = form.phone.value.trim();
+            var email = form.email.value.trim();
+            var address = form.address.value.trim();
+            var city = form.city.value.trim();
+            var role = checkedValue('role');
+            var occupancy = checkedValue('occupancy');
+            var assist = Array.prototype.map.call(
+              form.querySelectorAll('input[name="assist"]:checked'),
+              function (i) { return i.value; }
+            ).join(', ');
+            var message = form.message.value.trim();
+
+            var subject = 'Estate property consultation request from ' + first + ' ' + last;
+            var body = 'Name: ' + first + ' ' + last + '\n'
+              + 'Phone: ' + phone + '\n'
+              + 'Email: ' + email + '\n'
+              + 'Property address: ' + address + (city ? ', ' + city : '') + '\n'
+              + 'Role: ' + (role || 'Not specified') + '\n'
+              + 'Property currently: ' + (occupancy || 'Not specified') + '\n'
+              + 'Assistance needed: ' + (assist || 'Not specified') + '\n\n'
+              + (message ? 'Additional details:\n' + message : '');
+            var mailto = 'mailto:info@compmanagementsolutions.com'
+              + '?subject=' + encodeURIComponent(subject)
+              + '&body=' + encodeURIComponent(body);
+            note.textContent = 'Opening your email app to send this to us...';
+            note.className = 'form-note success';
+            window.location.href = mailto;
+          });
+        }
+      } catch (err) { /* form still displays without JS enhancement */ }
+    })();
+
+    (function () {
+      // ---- hero background video (Cloudinary-optimized) ----
+      // Still hero photo stays as the fallback; the video fades in once playing.
+      try {
+        var v = document.getElementById('heroVideo');
+        if (!v) return;
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var conn = navigator.connection || {};
+        var saver = conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '');
+        if (reduce || saver) return;
+
+        var base = 'https://res.cloudinary.com/ddz6cxuo9/video/upload/';
+        var id = 'v1793100204/196711_Trimmer_lawn_mowing_machine_grass_garden_tool_By_The_Stock_Studio_Artlist_HD_efhph4';
+        var w = window.innerWidth <= 820 ? 1080 : 1920;
+        // c_limit = never upscale, q_auto:good = visually clean, ac_none = drop unused audio track
+        var t = 'q_auto:good,w_' + w + ',c_limit,ac_none';
+
+        v.poster = base + 'so_0,f_jpg,q_auto,w_' + w + ',c_limit/' + id + '.jpg';
+        [['video/webm; codecs="vp9"', 'vc_vp9,f_webm', '.webm'],
+         ['video/mp4', 'vc_h264,f_mp4', '.mp4']].forEach(function (f) {
+          var s = document.createElement('source');
+          s.type = f[0];
+          s.src = base + t + ',' + f[1] + '/' + id + f[2];
+          v.appendChild(s);
+        });
+        v.muted = true;
+        v.addEventListener('playing', function () { v.classList.add('ready'); });
+        v.load();
+        var p = v.play();
+        if (p && p.catch) p.catch(function () { /* autoplay blocked: still image remains */ });
+      } catch (err) { /* still hero image remains */ }
+    })();
+  </script>
+</body>
+
+</html>
