@@ -13,14 +13,14 @@
 
   <style>
     :root {
-      --navy-950: #0c1c31;
-      --navy-900: #10233c;
+       --navy-950: #0c1c31;
+      --navy-900: #02296C;
       --navy-800: #16304f;
       --navy-700: #24456e;
       --slate-500: #52708f;
       --brass-600: #a8792f;
-      --brass-500: #c08a2e;
-      --brass-400: #d6a44a;
+      --brass-500: #FDBB07;
+      --brass-400: #FDBB07;
       --paper-50: #faf7f0;
       --paper-100: #f4efe3;
       --paper-200: #ece4d2;
@@ -43,6 +43,8 @@
       --logo-icon: url("https://res.cloudinary.com/l7c886x3/image/upload/v1788873968/compmanagementlogo.png");
       --hero-photo: url("https://res.cloudinary.com/l7c886x3/image/upload/v1788874033/hero-bg.png");
     }
+
+    
 
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
@@ -503,8 +505,19 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(12, 28, 49, 0.82) 0%, rgba(12, 28, 49, 0.58) 38%, rgba(16, 35, 60, 0.72) 78%, rgba(22, 48, 79, 0.92) 100%),
-        linear-gradient(90deg, rgba(12, 28, 49, 0.55) 0%, rgba(12, 28, 49, 0.1) 45%, rgba(12, 28, 49, 0.05) 100%);
+    linear-gradient(
+        180deg,
+        rgba(2, 41, 108, 0.82) 0%,
+        rgba(2, 41, 108, 0.58) 38%,
+        rgba(2, 41, 108, 0.72) 78%,
+        rgba(2, 41, 108, 0.92) 100%
+    ),
+    linear-gradient(
+        90deg,
+        rgba(2, 41, 108, 0.55) 0%,
+        rgba(2, 41, 108, 0.1) 45%,
+        rgba(2, 41, 108, 0.05) 100%
+    );
     }
 
     .hero-inner {
@@ -662,6 +675,46 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
+    /* Neighborhood image element */
+.services-image {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  margin: 32px 0;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(190, 160, 115, 0.35);
+}
+
+.services-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 75%;
+}
+
+/* Service grid */
+.services-band .check-item {
+  background: #FFFDFA;
+  border-color: rgba(190, 160, 115, 0.4);
+}
+
+.services-band .check-item h3 {
+  color: #171717;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .services-band {
+    padding: 65px 0;
+  }
+
+  .services-image {
+    height: 180px;
+    margin: 24px 0;
+  }
+}
 
     .check-grid {
       display: grid;
@@ -939,7 +992,7 @@
 
     /* ---------- CTA / CONTACT ---------- */
     .cta-band {
-      background: linear-gradient(135deg, var(--navy-950), var(--navy-800));
+      background: #02296C;
       color: var(--navy-ink);
       border-radius: 24px;
       padding: 52px 44px;
@@ -1010,7 +1063,7 @@
 
     /* ---------- CONTACT FORM ---------- */
     .form-band {
-      background: linear-gradient(180deg, var(--navy-950), var(--navy-800));
+      background: #02296C;
       border-radius: 24px;
       padding: 56px 48px 48px;
       margin-top: 28px;
@@ -1935,7 +1988,7 @@
             <use href="#i-phone" />
           </svg>
         </a>
-        <a class="icon-btn" href="mailto:info@compmanagementsolutions.com" aria-label="Email us">
+        <a class="icon-btn" href="mailto:office@cms-detroit.com" aria-label="Email us">
           <svg class="i" viewBox="0 0 24 24">
             <use href="#i-mail" />
           </svg>
@@ -2001,118 +2054,127 @@
     </div>
 
     <!-- WHAT WE HANDLE -->
-    <section id="services" class="services-band">
-      <div class="wrap">
-        <div class="section-head reveal-up">
-          <div>
-            <span class="eyebrow">What we coordinate</span>
-            <h2>We handle the property so you can handle the estate.</h2>
-          </div>
-          <p class="desc">Instead of calling multiple contractors, cleaners, landscapers, estate-sale companies, and
-            real estate professionals, you can work with one experienced real estate and property-management team.</p>
-        </div>
-
-        <div class="lead reveal">
-          <p>Whether you are a Personal Representative, Executor, Administrator, heir, or attorney assisting an estate,
-            we can help coordinate the work necessary to protect the property, prepare it for its next chapter, and
-            determine the best course of action. Depending on the property's needs, we can coordinate:</p>
-          <div class="creds">
-            <span class="cred-pill"><span class="dot"></span>Personal Representative</span>
-            <span class="cred-pill"><span class="dot"></span>Executor</span>
-            <span class="cred-pill"><span class="dot"></span>Administrator</span>
-            <span class="cred-pill"><span class="dot"></span>Heir</span>
-            <span class="cred-pill"><span class="dot"></span>Attorney</span>
-          </div>
-        </div>
-
-        <div class="check-grid">
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-search" /></svg></div>
-            <h3>Property inspections and condition assessments</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-trash" /></svg></div>
-            <h3>Property clean-outs and debris removal</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-box" /></svg></div>
-            <h3>Removal of unwanted furniture and personal property</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-tag" /></svg></div>
-            <h3>Estate-sale coordination</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-heart" /></svg></div>
-            <h3>Donation and disposal coordination</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-sparkle" /></svg></div>
-            <h3>Cleaning services</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-leaf" /></svg></div>
-            <h3>Lawn care and exterior maintenance</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-snow" /></svg></div>
-            <h3>Snow removal</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-wrench" /></svg></div>
-            <h3>Minor repairs and maintenance</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-users" /></svg></div>
-            <h3>Contractor coordination</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-lock" /></svg></div>
-            <h3>Lock changes and property security</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-eye" /></svg></div>
-            <h3>Vacant-property monitoring</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-zap" /></svg></div>
-            <h3>Utility coordination</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-filecheck" /></svg></div>
-            <h3>City rental registration and property-compliance coordination</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-shield" /></svg></div>
-            <h3>Property preservation and winterization</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-chart" /></svg></div>
-            <h3>Market-value analysis</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-home" /></svg></div>
-            <h3>Preparation for sale</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-flag" /></svg></div>
-            <h3>Real estate listing and marketing</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-circlecheck" /></svg></div>
-            <h3>As-is sale options</h3>
-          </div>
-          <div class="check-item reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-key" /></svg></div>
-            <h3>Rental preparation</h3>
-          </div>
-          <div class="check-item wide reveal">
-            <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-building" /></svg></div>
-            <h3>Leasing and ongoing property management</h3>
-          </div>
-        </div>
+<section id="services" class="services-band">
+  <div class="wrap">
+    <div class="section-head reveal-up">
+      <div>
+        <span class="eyebrow">What we coordinate</span>
+        <h2>We handle the property so you can handle the estate.</h2>
       </div>
-    </section>
+      <p class="desc">Instead of calling multiple contractors, cleaners, landscapers, estate-sale companies, and
+        real estate professionals, you can work with one experienced real estate and property-management team.</p>
+    </div>
+
+    <div class="lead reveal">
+      <p>Whether you are a Personal Representative, Executor, Administrator, heir, or attorney assisting an estate,
+        we can help coordinate the work necessary to protect the property, prepare it for its next chapter, and
+        determine the best course of action. Depending on the property's needs, we can coordinate:</p>
+      <div class="creds">
+        <span class="cred-pill"><span class="dot"></span>Personal Representative</span>
+        <span class="cred-pill"><span class="dot"></span>Executor</span>
+        <span class="cred-pill"><span class="dot"></span>Administrator</span>
+        <span class="cred-pill"><span class="dot"></span>Heir</span>
+        <span class="cred-pill"><span class="dot"></span>Attorney</span>
+      </div>
+    </div>
+
+    <!-- Neighborhood Image -->
+    <div class="services-image reveal">
+      <img
+        src="https://res.cloudinary.com/ddz6cxuo9/image/upload/v1794223078/Sunny_Tree-Lined_Suburban_Street_uykk2d.png"
+        alt="Tree-lined residential neighborhood with suburban homes"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="check-grid">
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-search" /></svg></div>
+        <h3>Property inspections and condition assessments</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-trash" /></svg></div>
+        <h3>Property clean-outs and debris removal</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-box" /></svg></div>
+        <h3>Removal of unwanted furniture and personal property</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-tag" /></svg></div>
+        <h3>Estate-sale coordination</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-heart" /></svg></div>
+        <h3>Donation and disposal coordination</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-sparkle" /></svg></div>
+        <h3>Cleaning services</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-leaf" /></svg></div>
+        <h3>Lawn care and exterior maintenance</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-snow" /></svg></div>
+        <h3>Snow removal</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-wrench" /></svg></div>
+        <h3>Minor repairs and maintenance</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-users" /></svg></div>
+        <h3>Contractor coordination</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-lock" /></svg></div>
+        <h3>Lock changes and property security</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-eye" /></svg></div>
+        <h3>Vacant-property monitoring</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-zap" /></svg></div>
+        <h3>Utility coordination</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-filecheck" /></svg></div>
+        <h3>City rental registration and property-compliance coordination</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-shield" /></svg></div>
+        <h3>Property preservation and winterization</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-chart" /></svg></div>
+        <h3>Market-value analysis</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-home" /></svg></div>
+        <h3>Preparation for sale</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-flag" /></svg></div>
+        <h3>Real estate listing and marketing</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-circlecheck" /></svg></div>
+        <h3>As-is sale options</h3>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-key" /></svg></div>
+        <h3>Rental preparation</h3>
+      </div>
+      <div class="check-item wide reveal">
+        <div class="check-ico"><svg class="i" viewBox="0 0 24 24"><use href="#i-building" /></svg></div>
+        <h3>Leasing and ongoing property management</h3>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- OPTIONS -->
     <section id="options">
@@ -2158,51 +2220,58 @@
     </section>
 
     <!-- ASSESSMENT -->
-    <section id="assessment"
-      style="background: var(--bg-sunken); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-      <div class="wrap about-wrap">
-        <div>
-          <div class="about-card reveal">
-            <span class="eyebrow">Estate Property Action Plan</span>
-            <div class="quote-mark">&ldquo;</div>
-            <p>A recommended plan outlining what should be addressed now, what can wait, and what may help prepare the
-              property for sale or rental.</p>
-            <div class="sig">Comprehensive Management Solutions, Inc.</div>
-          </div>
-          <div class="about-facts">
-            <div class="fact reveal">
-              <div class="num">Now</div>
-              <div class="label">what should be addressed first</div>
-            </div>
-            <div class="fact reveal">
-              <div class="num">Later</div>
-              <div class="label">what can wait</div>
-            </div>
-            <div class="fact reveal">
-              <div class="num">Next</div>
-              <div class="label">what prepares it for sale or rental</div>
-            </div>
-          </div>
+   <section id="assessment"
+  style="background: var(--bg-sunken); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="wrap about-wrap">
+    <div>
+      <div class="about-card reveal">
+        <span class="eyebrow">Estate Property Action Plan</span>
+        <h3>We can recommend a plan.</h3>
+        <p>
+          A clear, recommended action plan outlining what should be addressed now,
+          what can wait, and the steps needed to prepare the property for sale or rental.
+        </p>
+      </div>
+
+      <div class="about-facts">
+        <div class="fact reveal">
+          <div class="num">Now</div>
+          <div class="label">what should be addressed first</div>
         </div>
-        <div class="about-detail reveal">
-          <span class="eyebrow" style="color:var(--accent); display:block; margin-bottom:12px;">Estate Property
-            Assessment</span>
-          <h3>Every property is different.</h3>
-          <p>Our process begins with understanding the estate's goals and evaluating the property. From there, we
-            develop a recommended Estate Property Action Plan so you know what to do first and what can wait.</p>
-          <p>We can identify immediate concerns such as:</p>
-          <div class="creds">
-            <span class="cred-pill"><span class="dot"></span>Security</span>
-            <span class="cred-pill"><span class="dot"></span>Deferred maintenance</span>
-            <span class="cred-pill"><span class="dot"></span>Debris</span>
-            <span class="cred-pill"><span class="dot"></span>Utilities</span>
-            <span class="cred-pill"><span class="dot"></span>Exterior maintenance</span>
-            <span class="cred-pill"><span class="dot"></span>Occupancy</span>
-            <span class="cred-pill"><span class="dot"></span>General property condition</span>
-          </div>
+        <div class="fact reveal">
+          <div class="num">Later</div>
+          <div class="label">what can wait</div>
+        </div>
+        <div class="fact reveal">
+          <div class="num">Next</div>
+          <div class="label">prepare the property for sale or rental</div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="about-detail reveal">
+      <span class="eyebrow" style="color:var(--accent); display:block; margin-bottom:12px;">
+        Estate Property Assessment
+      </span>
+      <h3>Every property is different.</h3>
+      <p>
+        Our process begins with understanding the estate's goals and evaluating the property.
+        From there, we develop a recommended Estate Property Action Plan so you know what
+        to do first and what can wait.
+      </p>
+      <p>We can identify immediate concerns such as:</p>
+      <div class="creds">
+        <span class="cred-pill"><span class="dot"></span>Security</span>
+        <span class="cred-pill"><span class="dot"></span>Deferred maintenance</span>
+        <span class="cred-pill"><span class="dot"></span>Debris</span>
+        <span class="cred-pill"><span class="dot"></span>Utilities</span>
+        <span class="cred-pill"><span class="dot"></span>Exterior maintenance</span>
+        <span class="cred-pill"><span class="dot"></span>Occupancy</span>
+        <span class="cred-pill"><span class="dot"></span>General property condition</span>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- VACANT PROPERTY -->
     <section id="vacant" class="addl">
@@ -2299,7 +2368,7 @@
               <svg class="i" viewBox="0 0 24 24"><use href="#i-mail" /></svg>
               <div>
                 <div class="l1">Email</div>
-                <div class="l2">info@compmanagementsolutions.com</div>
+                <div class="l2">office@cms-detroit.com</div>
               </div>
             </div>
             <div class="cta-line">
@@ -2585,7 +2654,7 @@
               + 'Property currently: ' + (occupancy || 'Not specified') + '\n'
               + 'Assistance needed: ' + (assist || 'Not specified') + '\n\n'
               + (message ? 'Additional details:\n' + message : '');
-            var mailto = 'mailto:info@compmanagementsolutions.com'
+            var mailto = 'mailto:office@cms-detroit.com'
               + '?subject=' + encodeURIComponent(subject)
               + '&body=' + encodeURIComponent(body);
             note.textContent = 'Opening your email app to send this to us...';

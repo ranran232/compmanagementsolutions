@@ -14,13 +14,13 @@
   <style>
     :root {
       --navy-950: #0c1c31;
-      --navy-900: #10233c;
+      --navy-900: #02296C;
       --navy-800: #16304f;
       --navy-700: #24456e;
       --slate-500: #52708f;
       --brass-600: #a8792f;
-      --brass-500: #c08a2e;
-      --brass-400: #d6a44a;
+      --brass-500: #FDBB07;
+      --brass-400: #FDBB07;
       --paper-50: #faf7f0;
       --paper-100: #f4efe3;
       --paper-200: #ece4d2;
@@ -503,8 +503,19 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(12, 28, 49, 0.82) 0%, rgba(12, 28, 49, 0.58) 38%, rgba(16, 35, 60, 0.72) 78%, rgba(22, 48, 79, 0.92) 100%),
-        linear-gradient(90deg, rgba(12, 28, 49, 0.55) 0%, rgba(12, 28, 49, 0.1) 45%, rgba(12, 28, 49, 0.05) 100%);
+    linear-gradient(
+        180deg,
+        rgba(2, 41, 108, 0.82) 0%,
+        rgba(2, 41, 108, 0.58) 38%,
+        rgba(2, 41, 108, 0.72) 78%,
+        rgba(2, 41, 108, 0.92) 100%
+    ),
+    linear-gradient(
+        90deg,
+        rgba(2, 41, 108, 0.55) 0%,
+        rgba(2, 41, 108, 0.1) 45%,
+        rgba(2, 41, 108, 0.05) 100%
+    );
     }
 
     .hero-inner {
@@ -939,7 +950,7 @@
 
     /* ---------- CTA / CONTACT ---------- */
     .cta-band {
-      background: linear-gradient(135deg, var(--navy-950), var(--navy-800));
+      background: #02296C;
       color: var(--navy-ink);
       border-radius: 24px;
       padding: 52px 44px;
@@ -1010,7 +1021,7 @@
 
     /* ---------- CONTACT FORM ---------- */
     .form-band {
-      background: linear-gradient(180deg, var(--navy-950), var(--navy-800));
+      background: #02296C;
       border-radius: 24px;
       padding: 56px 48px 48px;
       margin-top: 28px;
@@ -1484,7 +1495,7 @@
               d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
         </a>
-        <a class="icon-btn" href="mailto:info@compmanagementsolutions.com" aria-label="Email us">
+        <a class="icon-btn" href="mailto:office@cms-detroit.com" aria-label="Email us">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -1584,7 +1595,7 @@
               </svg></div>
             <div>
               <h3>Collect rent &amp; reporting</h3>
-              <p>Rent collection with monthly, quarterly and year-end reporting.</p>
+              <p>Rent collection with monthly and year-end reporting.</p>
             </div>
           </div>
           <div class="check-item reveal">
@@ -1681,95 +1692,99 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
-      <div class="wrap about-wrap">
-        <div>
-          <div class="about-card reveal">
-            <div class="quote-mark">&ldquo;</div>
-            <p>We are a minority-owned company with over 20 years of real estate experience managing, rehabilitating,
-              renting, screening and placing tenants in single-family and multi-family units.</p>
-            <div class="sig">Comprehensive Management Solutions, Inc.</div>
-          </div>
-          <div class="about-facts">
-            <div class="fact reveal">
-              <div class="num">20+</div>
-              <div class="label">years of experience</div>
-            </div>
-            <div class="fact reveal">
-              <div class="num">MI</div>
-              <div class="label">licensed broker-owned</div>
-            </div>
-            <div class="fact reveal">
-              <div class="num">L&middot;B&middot;I</div>
-              <div class="label">licensed, bonded, insured</div>
-            </div>
-          </div>
+ <section id="about">
+  <div class="wrap about-wrap">
+    <div>
+      <div class="about-card reveal">
+        <p>We are an established company with over 20 years of real estate experience managing, rehabilitating,
+          renting, screening and placing tenants in single-family and multi-family units.</p>
+      </div>
+
+      <div class="about-facts">
+        <div class="fact reveal">
+          <div class="num">20+</div>
+          <div class="label">years of experience</div>
         </div>
-        <div class="about-detail reveal">
-          <span class="eyebrow" style="color:var(--accent); display:block; margin-bottom:12px;">About us</span>
-          <h3>Owned and managed by a licensed Michigan broker.</h3>
-          <p>Comprehensive Management Solutions, Inc. is managed and owned by a licensed Michigan real estate broker,
-            operating in full compliance with state law. That license sits behind everything on this page &mdash; lease
-            preparation, rent collection, maintenance, and legal proceedings alike.</p>
-          <p>We're licensed, bonded and insured, and documentation is available upon request. If you own a single-family
-            or multi-family rental in metro Detroit and would rather collect rent than manage it, this is what we do.
-          </p>
-          <div class="creds">
-            <span class="cred-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22Z" />
-              </svg>Licensed</span>
-            <span class="cred-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="10" rx="2" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-              </svg>Bonded</span>
-            <span class="cred-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22Z" />
-                <path d="m9 12 2 2 4-4" />
-              </svg>Insured</span>
-            <span class="cred-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="9" />
-                <path d="M12 3a12 12 0 0 0 0 18M12 3a12 12 0 0 1 0 18M3 12h18" />
-              </svg>Minority-owned</span>
-          </div>
+        <div class="fact reveal">
+          <div class="num">MI</div>
+          <div class="label">licensed broker-owned</div>
+        </div>
+        <div class="fact reveal">
+          <div class="num">L&middot;B&middot;I</div>
+          <div class="label">licensed, bonded, insured</div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="about-detail reveal">
+      <span class="eyebrow" style="color:var(--accent); display:block; margin-bottom:12px;">About us</span>
+      <h3>Owned and managed by a licensed Michigan broker.</h3>
+      <p>Comprehensive Management Solutions, Inc. is managed and owned by a licensed Michigan real estate broker,
+        operating in full compliance with state law. That license sits behind everything on this page &mdash; lease
+        preparation, rent collection, maintenance, and legal proceedings alike.</p>
+      <p>We're licensed, bonded and insured, and documentation is available upon request. If you own a single-family
+        or multi-family rental in metro Detroit and would rather collect rent than manage it, this is what we do.
+      </p>
+
+      <div class="creds">
+        <span class="cred-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22Z" />
+          </svg>Licensed
+        </span>
+        <span class="cred-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="10" rx="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>Bonded
+        </span>
+        <span class="cred-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22Z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>Insured
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- PROCESS -->
     <section
-      style="background: var(--bg-sunken); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-      <div class="wrap">
-        <div class="section-head reveal-up">
-          <div>
-            <span class="eyebrow">How we start</span>
-            <h2>From first call to a leased, protected property.</h2>
-          </div>
-          <p class="desc">Three steps, one point of contact, and a broker's license standing behind the paperwork.</p>
-        </div>
-        <div class="process-grid">
-          <div class="process-step reveal">
-            <div class="pnum">01</div>
-            <h3>Tell us about the property</h3>
-            <p>Call or email with the address and what you need &mdash; leasing, ongoing management, or both.</p>
-          </div>
-          <div class="process-step reveal">
-            <div class="pnum">02</div>
-            <h3>We put the paperwork in place</h3>
-            <p>Lease documents, notices, rental registration and any required inspections get coordinated up front.</p>
-          </div>
-          <div class="process-step reveal">
-            <div class="pnum">03</div>
-            <h3>You collect rent, we handle the rest</h3>
-            <p>Tenant placement, maintenance, compliance and reporting run on schedule &mdash; monthly, quarterly,
-              year-end.</p>
-          </div>
-        </div>
+  style="background: var(--bg-sunken); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="wrap">
+    <div class="section-head reveal-up">
+      <div>
+        <span class="eyebrow">How we start</span>
+        <h2>From first call to a leased, protected property.</h2>
       </div>
-    </section>
+      <p class="desc">Three steps, one point of contact, and a broker's license standing behind the paperwork.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="pnum">01</div>
+        <h3>Tell us about the property</h3>
+        <p>Call or email with the address and what you need &mdash; leasing, ongoing management, or both.</p>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="pnum">02</div>
+        <h3>We put the paperwork in place</h3>
+        <p>Lease documents, notices, rental registration and any required inspections get coordinated up front.</p>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="pnum">03</div>
+        <h3>You collect rent, we handle the rest</h3>
+        <p>Tenant placement, maintenance, compliance and reporting run on schedule &mdash; monthly and year-end.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- CONTACT / CTA -->
     <section id="contact">
@@ -1781,7 +1796,7 @@
             </p>
             <div class="hero-ctas">
               <a class="btn btn-primary" href="tel:+12487912161">Call (248) 791-2161</a>
-              <a class="btn btn-ghost" href="mailto:info@compmanagementsolutions.com"
+              <a class="btn btn-ghost" href="mailto:office@cms-detroit.com"
                 style="border-color: color-mix(in srgb, var(--navy-ink) 24%, transparent); color: var(--navy-ink);">Email
                 us</a>
             </div>
@@ -1806,7 +1821,7 @@
               </svg>
               <div>
                 <div class="l1">Email</div>
-                <div class="l2">info@compmanagementsolutions.com</div>
+                <div class="l2">office@cms-detroit.com</div>
               </div>
             </div>
             <div class="cta-line">
@@ -2024,7 +2039,7 @@
             var message = form.message.value.trim();
             var subject = 'Property management inquiry from ' + first + ' ' + last;
             var body = 'Name: ' + first + ' ' + last + '\n' + 'Email: ' + email + '\n\n' + message;
-            var mailto = 'mailto:info@compmanagementsolutions.com'
+            var mailto = 'mailto:office@cms-detroit.com'
               + '?subject=' + encodeURIComponent(subject)
               + '&body=' + encodeURIComponent(body);
             note.textContent = 'Opening your email app to send this to us...';
